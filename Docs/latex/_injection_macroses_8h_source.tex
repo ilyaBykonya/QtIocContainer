@@ -1,0 +1,30 @@
+\hypertarget{_injection_macroses_8h_source}{}\doxysection{Injection\+Macroses.\+h}
+\label{_injection_macroses_8h_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InjectionMacroses.h@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InjectionMacroses.h}}
+\mbox{\hyperlink{_injection_macroses_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00003}\mbox{\hyperlink{_injection_macroses_8h_a4649423a224f18755f2b8353544ecaad}{00003}} \textcolor{preprocessor}{\#define Q\_INJECT\_IN\_DEFAULT(Type, Name) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00004}00004 \textcolor{preprocessor}{    QPointer<Type> m\_\#\#Name; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00005}00005 \textcolor{preprocessor}{    Q\_INVOKABLE void inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00006}00006 \textcolor{preprocessor}{        auto loaded = QtIoc::DependencyLoader<Type>\{ container, \#Name \}.load(); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00007}00007 \textcolor{preprocessor}{        if(loaded != m\_\#\#Name) \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00008}00008 \textcolor{preprocessor}{            m\_\#\#Name = QtIoc::DependencyLoader<Type>\{ container, \#Name \}.load(); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00009}00009 \textcolor{preprocessor}{        \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00010}00010 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00012}\mbox{\hyperlink{_injection_macroses_8h_ad18416e354583d865b666eca558f7875}{00012}} \textcolor{preprocessor}{\#define Q\_INJECT\_IN\_MEMBER(Type, Name, Member) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00013}00013 \textcolor{preprocessor}{    Q\_INVOKABLE void inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00014}00014 \textcolor{preprocessor}{        auto loaded = QtIoc::DependencyLoader<Type>\{ container, \#Name \}.load(); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00015}00015 \textcolor{preprocessor}{        if(loaded != \#\#Member) \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00016}00016 \textcolor{preprocessor}{            \#\#Member = loaded; \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00017}00017 \textcolor{preprocessor}{        \}\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00018}00018 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00020}\mbox{\hyperlink{_injection_macroses_8h_a8a44e46a6fb9c8d0dd767247ada8c306}{00020}} \textcolor{preprocessor}{\#define Q\_INJECT\_IN\_METHOD(Type, Name, Method) \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00021}00021 \textcolor{preprocessor}{    Q\_INVOKABLE void inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00022}00022 \textcolor{preprocessor}{        \#\#Method(QtIoc::DependencyLoader<Type>\{ container, \#Name \}.load()); \(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00023}00023 \textcolor{preprocessor}{    \}}}
+\DoxyCodeLine{\Hypertarget{_injection_macroses_8h_source_l00024}00024 }
+
+\end{DoxyCode}

@@ -6,7 +6,6 @@
 namespace QtIoc {
 /*!
  * \brief The DependencyInjector class
- * \details Инъектор зависимостей. Даёт контейнер для загрузки всем зависимостям объекта.
  */
 class DependencyInjector {
 private:
@@ -16,10 +15,21 @@ public:
         :m_container{ container }
         {
         }
+
+    /*!
+     * \brief inject_dependencies
+     * \param QPointer<Type> intance
+     * \return void
+     */
     template<typename Type>
     void inject_dependencies(QPointer<Type> object) {
         call_inject_methods(object, select_inject_methods(object->metaObject()));
     }
+    /*!
+     * \brief inject_dependencies
+     * \param Type* intance
+     * \return void
+     */
     template<typename Type>
     void inject_dependencies(Type* object) {
         call_inject_methods(object, select_inject_methods(object->metaObject()));

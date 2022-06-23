@@ -1,0 +1,27 @@
+\hypertarget{_shared_container_8h_source}{}\doxysection{Shared\+Container.\+h}
+\label{_shared_container_8h_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/InstanceContainers/SharedContainer/SharedContainer.h@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/InstanceContainers/SharedContainer/SharedContainer.h}}
+\mbox{\hyperlink{_shared_container_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../QtIocContainer\_global.h"{}}}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../AbstractContainer/AbstractContainer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00018}\mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{_qt_ioc_container__global_8h_a48cb04df58f65f0f0d1d31647718f664}{QTIOCCONTAINER\_EXPORT}} \mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{SharedContainer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{AbstractContainer}} \{}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00019}00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00020}00020     \textcolor{keyword}{using }InstancePointer = \textcolor{keyword}{typename} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{AbstractContainer::QObjectPointer}};}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00021}00021     \textcolor{keyword}{using }InstacneFactory = std::function<InstancePointer()>;}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00022}00022     InstacneFactory m\_factory;}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00023}00023     InstancePointer m\_instance;}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00024}00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00025}00025     \mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{SharedContainer}}(InstacneFactory factory);}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00026}00026     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{\string~SharedContainer}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00027}00027 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00028}00028     \textcolor{keyword}{virtual} InstancePointer load() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00029}00029     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} contains() \textcolor{keyword}{const override};}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00030}00030 \};}
+\DoxyCodeLine{\Hypertarget{_shared_container_8h_source_l00031}00031 \}}
+
+\end{DoxyCode}

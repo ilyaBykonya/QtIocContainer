@@ -6,14 +6,11 @@
 namespace QtIoc {
 /*!
  * \brief The ScopeContainer class
- * \details Базовый класс контейнера для объекта,
- * обеспечивающего scope-lifetime.
+ * \details The base container class for the object,
+ * providing scope-lifetime.
  *
  * Scope-lifetime:
- * новый объект для каждого вызова.
- *
- * \author Ilya Bykonya
- * \date 21.06.2022
+ * a new object is created for each call.
  */
 class QTIOCCONTAINER_EXPORT ScopeContainer : public AbstractContainer {
 private:

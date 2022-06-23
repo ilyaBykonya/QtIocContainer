@@ -12,7 +12,6 @@ namespace QtIoc {
  *
  * \details Класс для загрузки зависимости из контейнера.
  */
-
 template<typename Type>
 class DependencyLoader;
 
@@ -22,35 +21,19 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
-    DependencyLoader() = default;
-    DependencyLoader(const QString& name)
-        :m_name{ name }
-        {
-        }
-    DependencyLoader(QPointer<IocContainer> container)
-        :m_container{ container }
-        {
-        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
         {
         }
 
-    void setContainer(QPointer<IocContainer> container) {
-        m_container = container;
-    }
-    void serName(const QString& name) {
-        m_name = name;
-    }
-
     /*!
      * \brief load ()
-     * \return std::shared_ptr<Type>
-     * \throw ElementNotStoredException Если зависиммости нет в контейнере
-     * \throw InvalidContainerException При внутренней ошибке
-     * \throw FailedIntanceCastOnLoadException При невозможности преобразования типа
-     * \throw std::bad_any_cast При внутренней ошибке
+     * \details Загружает инстанс объекта из контейнера и внедряет в него зависимости.
+     * \return QPointer<Type>
+     * \throw ElementNotStoredException
+     * \throw InvalidContainerException
+     * \throw FailedIntanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
@@ -60,6 +43,11 @@ public:
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;
     }
+    /*!
+     * \brief operator ->
+     * \return QPointer<Type>
+     * \details Обёртка над load() для прямого доступа к инстансу.
+     */
     QPointer<Type> operator->() {
         return this->load();
     }
@@ -71,35 +59,19 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
-    DependencyLoader() = default;
-    DependencyLoader(const QString& name)
-        :m_name{ name }
-        {
-        }
-    DependencyLoader(QPointer<IocContainer> container)
-        :m_container{ container }
-        {
-        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
         {
         }
 
-    void setContainer(QPointer<IocContainer> container) {
-        m_container = container;
-    }
-    void serName(const QString& name) {
-        m_name = name;
-    }
-
     /*!
      * \brief load ()
-     * \return std::shared_ptr<Type>
-     * \throw ElementNotStoredException Если зависиммости нет в контейнере
-     * \throw InvalidContainerException При внутренней ошибке
-     * \throw FailedIntanceCastOnLoadException При невозможности преобразования типа
-     * \throw std::bad_any_cast При внутренней ошибке
+     * \details Загружает инстанс объекта из контейнера и внедряет в него зависимости.
+     * \return QPointer<Type>
+     * \throw ElementNotStoredException
+     * \throw InvalidContainerException
+     * \throw FailedIntanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
@@ -109,6 +81,11 @@ public:
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;
     }
+    /*!
+     * \brief operator ->
+     * \return QPointer<Type>
+     * \details Обёртка над load() для прямого доступа к инстансу.
+     */
     QPointer<Type> operator->() {
         return this->load();
     }
@@ -120,35 +97,20 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
-    DependencyLoader() = default;
-    DependencyLoader(const QString& name)
-        :m_name{ name }
-        {
-        }
-    DependencyLoader(QPointer<IocContainer> container)
-        :m_container{ container }
-        {
-        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
         {
         }
 
-    void setContainer(QPointer<IocContainer> container) {
-        m_container = container;
-    }
-    void serName(const QString& name) {
-        m_name = name;
-    }
 
     /*!
      * \brief load ()
-     * \return std::shared_ptr<Type>
-     * \throw ElementNotStoredException Если зависиммости нет в контейнере
-     * \throw InvalidContainerException При внутренней ошибке
-     * \throw FailedIntanceCastOnLoadException При невозможности преобразования типа
-     * \throw std::bad_any_cast При внутренней ошибке
+     * \details Loads an instance of an object from a container and injects dependencies into it.
+     * \return QPointer<Type>
+     * \throw ElementNotStoredException
+     * \throw InvalidContainerException
+     * \throw FailedIntanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
@@ -158,6 +120,11 @@ public:
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;
     }
+    /*!
+     * \brief operator ->
+     * \return QPointer<Type>
+     * \details Wrapper over load() for direct access to the instance.
+     */
     QPointer<Type> operator->() {
         return this->load();
     }

@@ -11,12 +11,9 @@ namespace QtIoc {
  * обеспечивающего shared-lifetime.
  *
  * Shared-lifetime:
- * объект живёт, пока ис пользуется кто-то извне.
- * когда все сильные ссылки на него удалены, он уничтожится.
- * при повторном запросе уничтоженный объект будет вновь создан через вызов фабрики.
- *
- * \author Ilya Bykonya
- * \date 21.06.2022
+ * The object lives as long as it is used by someone from the outside.
+ * When all strong references to it are removed, it will be destroyed.
+ * When requested again, the destroyed object will be re-created via a factory call.
  */
 class QTIOCCONTAINER_EXPORT SharedContainer : public AbstractContainer {
 private:

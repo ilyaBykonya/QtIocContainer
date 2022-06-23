@@ -7,8 +7,7 @@
 namespace QtIoc {
 /*!
  * \brief The ElementNotStoredException exception
- *
- * \details Выбрасывается, когда в контейнере нет зависимости нужного элемента.
+ * \details The instance could not be converted to the required type
  */
 class QTIOCCONTAINER_EXPORT FailedIntanceCastOnLoadException : public QException {
 private:

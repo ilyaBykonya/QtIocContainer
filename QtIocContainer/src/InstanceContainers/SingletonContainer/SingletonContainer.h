@@ -9,10 +9,7 @@ namespace QtIoc {
  * обеспечивающего singleton-lifetime.
  *
  * Singleton-lifetime:
- * общий объект для каждого вызова.
- *
- * \author Ilya Bykonya
- * \date 21.06.2022
+ * One object for each call.
  */
 class QTIOCCONTAINER_EXPORT SingletonContainer : public AbstractContainer {
 private:

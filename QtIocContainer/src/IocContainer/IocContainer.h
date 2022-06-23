@@ -6,6 +6,10 @@
 #include <string>
 
 namespace QtIoc {
+/*!
+ * \brief The IocContainer class
+ * \details CRUD репозиторий для хранения контейнеров с объектами
+ */
 class QTIOCCONTAINER_EXPORT IocContainer : public QObject {
 private:
     using InstancePointer = QPointer<QObject>;
@@ -32,5 +36,12 @@ public:
      * \details Load instace from storage
      */
     QPointer<QObject> load_dependency(const QString& name);
+    /*!
+     * \brief remove_dependency
+     * \return void
+     * \param dependency-name
+     * \details Remove instace from storage
+     */
+    void remove_dependency(const QString& name);
 };
 }

@@ -1,0 +1,122 @@
+\hypertarget{class_qt_ioc_1_1_ioc_container}{}\doxysection{Qt\+Ioc\+::Ioc\+Container Class Reference}
+\label{class_qt_ioc_1_1_ioc_container}\index{QtIoc::IocContainer@{QtIoc::IocContainer}}
+
+
+The \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{Ioc\+Container}} class.  
+
+
+
+
+{\ttfamily \#include $<$Ioc\+Container.\+h$>$}
+
+Inheritance diagram for Qt\+Ioc\+::Ioc\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_ioc_1_1_ioc_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qt_ioc_1_1_ioc_container_ad7c68ce2575b2df4d1a51679358b04fb}{Ioc\+Container}} (QObject $\ast$parent=nullptr)
+\item 
+void \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container_af6e21281b5f18a77b59d4ada314e94d4}{store\+\_\+dependency}} (const QString \&name, Container\+Pointer container)
+\begin{DoxyCompactList}\small\item\em store\+\_\+dependency \end{DoxyCompactList}\item 
+QPointer$<$ QObject $>$ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container_ac529e78a33ebe4ec13919abdbe7cd4cc}{load\+\_\+dependency}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em load\+\_\+dependency \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container_a533354a62c411558202bf29cac052a82}{remove\+\_\+dependency}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em remove\+\_\+dependency \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{Ioc\+Container}} class. 
+
+CRUD репозиторий для хранения контейнеров с объектами 
+
+Definition at line \mbox{\hyperlink{_ioc_container_8h_source_l00013}{13}} of file \mbox{\hyperlink{_ioc_container_8h_source}{Ioc\+Container.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_ioc_container_ad7c68ce2575b2df4d1a51679358b04fb}\label{class_qt_ioc_1_1_ioc_container_ad7c68ce2575b2df4d1a51679358b04fb}} 
+\index{QtIoc::IocContainer@{QtIoc::IocContainer}!IocContainer@{IocContainer}}
+\index{IocContainer@{IocContainer}!QtIoc::IocContainer@{QtIoc::IocContainer}}
+\doxysubsubsection{\texorpdfstring{IocContainer()}{IocContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Ioc\+Container\+::\+Ioc\+Container (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line \mbox{\hyperlink{_ioc_container_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_ioc_container_8cpp_source}{Ioc\+Container.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_ioc_container_ac529e78a33ebe4ec13919abdbe7cd4cc}\label{class_qt_ioc_1_1_ioc_container_ac529e78a33ebe4ec13919abdbe7cd4cc}} 
+\index{QtIoc::IocContainer@{QtIoc::IocContainer}!load\_dependency@{load\_dependency}}
+\index{load\_dependency@{load\_dependency}!QtIoc::IocContainer@{QtIoc::IocContainer}}
+\doxysubsubsection{\texorpdfstring{load\_dependency()}{load\_dependency()}}
+{\footnotesize\ttfamily QPointer$<$ QObject $>$ Qt\+Ioc\+::\+Ioc\+Container\+::load\+\_\+dependency (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+load\+\_\+dependency 
+
+\begin{DoxyReturn}{Returns}
+object-\/instance 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dependency-\/name} & \\
+\hline
+\end{DoxyParams}
+Load instace from storage 
+
+Definition at line \mbox{\hyperlink{_ioc_container_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{_ioc_container_8cpp_source}{Ioc\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_ioc_container_a533354a62c411558202bf29cac052a82}\label{class_qt_ioc_1_1_ioc_container_a533354a62c411558202bf29cac052a82}} 
+\index{QtIoc::IocContainer@{QtIoc::IocContainer}!remove\_dependency@{remove\_dependency}}
+\index{remove\_dependency@{remove\_dependency}!QtIoc::IocContainer@{QtIoc::IocContainer}}
+\doxysubsubsection{\texorpdfstring{remove\_dependency()}{remove\_dependency()}}
+{\footnotesize\ttfamily void Qt\+Ioc\+::\+Ioc\+Container\+::remove\+\_\+dependency (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+remove\+\_\+dependency 
+
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dependency-\/name} & \\
+\hline
+\end{DoxyParams}
+Remove instace from storage 
+
+Definition at line \mbox{\hyperlink{_ioc_container_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_ioc_container_8cpp_source}{Ioc\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_ioc_container_af6e21281b5f18a77b59d4ada314e94d4}\label{class_qt_ioc_1_1_ioc_container_af6e21281b5f18a77b59d4ada314e94d4}} 
+\index{QtIoc::IocContainer@{QtIoc::IocContainer}!store\_dependency@{store\_dependency}}
+\index{store\_dependency@{store\_dependency}!QtIoc::IocContainer@{QtIoc::IocContainer}}
+\doxysubsubsection{\texorpdfstring{store\_dependency()}{store\_dependency()}}
+{\footnotesize\ttfamily void Qt\+Ioc\+::\+Ioc\+Container\+::store\+\_\+dependency (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{Container\+Pointer}]{container }\end{DoxyParamCaption})}
+
+
+
+store\+\_\+dependency 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dependency-\/name} & и dependency-\/container\\
+\hline
+\end{DoxyParams}
+Store instance-\/container into storage 
+
+Definition at line \mbox{\hyperlink{_ioc_container_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{_ioc_container_8cpp_source}{Ioc\+Container.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Ioc\+Container/\mbox{\hyperlink{_ioc_container_8h}{Ioc\+Container.\+h}}\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Ioc\+Container/\mbox{\hyperlink{_ioc_container_8cpp}{Ioc\+Container.\+cpp}}\end{DoxyCompactItemize}

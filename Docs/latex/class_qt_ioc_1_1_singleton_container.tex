@@ -1,0 +1,114 @@
+\hypertarget{class_qt_ioc_1_1_singleton_container}{}\doxysection{Qt\+Ioc\+::Singleton\+Container Class Reference}
+\label{class_qt_ioc_1_1_singleton_container}\index{QtIoc::SingletonContainer@{QtIoc::SingletonContainer}}
+
+
+The Static\+Container class.  
+
+
+
+
+{\ttfamily \#include $<$Singleton\+Container.\+h$>$}
+
+Inheritance diagram for Qt\+Ioc\+::Singleton\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_ioc_1_1_singleton_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a8f5f28293d7b438d6691bdf8626281d4}{Singleton\+Container}} (Instance\+Pointer instance)
+\item 
+virtual \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_aac0e0f0b5d57cc9e5f84fe405a23297d}{$\sim$\+Singleton\+Container}} () override
+\item 
+virtual Instance\+Pointer \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a390bc747f79081af023f0f19fe8d6d1c}{load}} () override
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a38dfc4202fe3ce1b83075cf8c7cff7c0}{contains}} () const override
+\begin{DoxyCompactList}\small\item\em contains \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The Static\+Container class. 
+
+Базовый класс контейнера для объекта, обеспечивающего singleton-\/lifetime.
+
+Singleton-\/lifetime\+: One object for each call. 
+
+Definition at line \mbox{\hyperlink{_singleton_container_8h_source_l00014}{14}} of file \mbox{\hyperlink{_singleton_container_8h_source}{Singleton\+Container.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_singleton_container_a8f5f28293d7b438d6691bdf8626281d4}\label{class_qt_ioc_1_1_singleton_container_a8f5f28293d7b438d6691bdf8626281d4}} 
+\index{QtIoc::SingletonContainer@{QtIoc::SingletonContainer}!SingletonContainer@{SingletonContainer}}
+\index{SingletonContainer@{SingletonContainer}!QtIoc::SingletonContainer@{QtIoc::SingletonContainer}}
+\doxysubsubsection{\texorpdfstring{SingletonContainer()}{SingletonContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Singleton\+Container\+::\+Singleton\+Container (\begin{DoxyParamCaption}\item[{Instance\+Pointer}]{instance }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_container_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_singleton_container_8cpp_source}{Singleton\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_singleton_container_aac0e0f0b5d57cc9e5f84fe405a23297d}\label{class_qt_ioc_1_1_singleton_container_aac0e0f0b5d57cc9e5f84fe405a23297d}} 
+\index{QtIoc::SingletonContainer@{QtIoc::SingletonContainer}!````~SingletonContainer@{$\sim$SingletonContainer}}
+\index{````~SingletonContainer@{$\sim$SingletonContainer}!QtIoc::SingletonContainer@{QtIoc::SingletonContainer}}
+\doxysubsubsection{\texorpdfstring{$\sim$SingletonContainer()}{~SingletonContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Singleton\+Container\+::$\sim$\+Singleton\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_container_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{_singleton_container_8cpp_source}{Singleton\+Container.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_singleton_container_a38dfc4202fe3ce1b83075cf8c7cff7c0}\label{class_qt_ioc_1_1_singleton_container_a38dfc4202fe3ce1b83075cf8c7cff7c0}} 
+\index{QtIoc::SingletonContainer@{QtIoc::SingletonContainer}!contains@{contains}}
+\index{contains@{contains}!QtIoc::SingletonContainer@{QtIoc::SingletonContainer}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Qt\+Ioc\+::\+Singleton\+Container\+::contains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+contains 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Checks if an instance exists in a container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_container_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{_singleton_container_8cpp_source}{Singleton\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_singleton_container_a390bc747f79081af023f0f19fe8d6d1c}\label{class_qt_ioc_1_1_singleton_container_a390bc747f79081af023f0f19fe8d6d1c}} 
+\index{QtIoc::SingletonContainer@{QtIoc::SingletonContainer}!load@{load}}
+\index{load@{load}!QtIoc::SingletonContainer@{QtIoc::SingletonContainer}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily Singleton\+Container\+::\+Instance\+Pointer Qt\+Ioc\+::\+Singleton\+Container\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+load 
+
+\begin{DoxyReturn}{Returns}
+QPointer$<$\+QObject$>$
+\end{DoxyReturn}
+Load object from container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_singleton_container_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_singleton_container_8cpp_source}{Singleton\+Container.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Singleton\+Container/\mbox{\hyperlink{_singleton_container_8h}{Singleton\+Container.\+h}}\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Singleton\+Container/\mbox{\hyperlink{_singleton_container_8cpp}{Singleton\+Container.\+cpp}}\end{DoxyCompactItemize}

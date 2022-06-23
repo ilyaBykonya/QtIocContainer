@@ -7,8 +7,7 @@
 namespace QtIoc {
 /*!
  * \brief The ElementNotStoredException exception
- *
- * \details Выбрасывается, когда в контейнере нет зависимости нужного элемента.
+ * \details The container does not have a dependency with that name.
  */
 class QTIOCCONTAINER_EXPORT ElementNotStoredException : public QException {
 private:

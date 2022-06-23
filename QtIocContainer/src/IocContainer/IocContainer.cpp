@@ -29,4 +29,7 @@ void IocContainer::store_dependency(const QString& name, ContainerPointer contai
 QPointer<QObject> IocContainer::load_dependency(const QString& name) {
     return loadInstance(takeIterator(name));
 }
+void IocContainer::remove_dependency(const QString &name) {
+    m_instances.erase(name);
+}
 }

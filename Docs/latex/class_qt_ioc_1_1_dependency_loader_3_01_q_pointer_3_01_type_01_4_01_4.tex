@@ -1,0 +1,91 @@
+\hypertarget{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4}{}\doxysection{Qt\+Ioc\+::Dependency\+Loader\texorpdfstring{$<$}{<} QPointer\texorpdfstring{$<$}{<} Type \texorpdfstring{$>$}{>} \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4}\index{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}}
+
+
+{\ttfamily \#include $<$Dependency\+Loader.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_ada9b2b55854583f27a3fc64e661d5c69}{Dependency\+Loader}} (QPointer$<$ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{Ioc\+Container}} $>$ container, const QString \&name)
+\item 
+QPointer$<$ Type $>$ \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}{load}} ()
+\begin{DoxyCompactList}\small\item\em load () \end{DoxyCompactList}\item 
+QPointer$<$ Type $>$ \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a30531b65a782c6c77e3f180aa56698f5}{operator-\/$>$}} ()
+\begin{DoxyCompactList}\small\item\em operator -\/\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Type$>$\newline
+class Qt\+Ioc\+::\+Dependency\+Loader$<$ QPointer$<$ Type $>$ $>$}
+
+
+Definition at line \mbox{\hyperlink{_dependency_loader_8h_source_l00095}{95}} of file \mbox{\hyperlink{_dependency_loader_8h_source}{Dependency\+Loader.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_ada9b2b55854583f27a3fc64e661d5c69}\label{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_ada9b2b55854583f27a3fc64e661d5c69}} 
+\index{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}!DependencyLoader@{DependencyLoader}}
+\index{DependencyLoader@{DependencyLoader}!QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{DependencyLoader()}{DependencyLoader()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{Qt\+Ioc\+::\+Dependency\+Loader}}$<$ QPointer$<$ Type $>$ $>$\+::\+Dependency\+Loader (\begin{DoxyParamCaption}\item[{QPointer$<$ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{Ioc\+Container}} $>$}]{container,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dependency_loader_8h_source_l00100}{100}} of file \mbox{\hyperlink{_dependency_loader_8h_source}{Dependency\+Loader.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}\label{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}} 
+\index{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}!load@{load}}
+\index{load@{load}!QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+QPointer$<$ Type $>$ \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{Qt\+Ioc\+::\+Dependency\+Loader}}$<$ QPointer$<$ Type $>$ $>$\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+load () 
+
+Loads an instance of an object from a container and injects dependencies into it. \begin{DoxyReturn}{Returns}
+QPointer$<$\+Type$>$ 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{class_qt_ioc_1_1_element_not_stored_exception}{Element\+Not\+Stored\+Exception}}} & \\
+\hline
+{\em \mbox{\hyperlink{class_qt_ioc_1_1_invalid_container_exception}{Invalid\+Container\+Exception}}} & \\
+\hline
+{\em \mbox{\hyperlink{class_qt_ioc_1_1_failed_intance_cast_on_load_exception}{Failed\+Intance\+Cast\+On\+Load\+Exception}}} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line \mbox{\hyperlink{_dependency_loader_8h_source_l00115}{115}} of file \mbox{\hyperlink{_dependency_loader_8h_source}{Dependency\+Loader.\+h}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a30531b65a782c6c77e3f180aa56698f5}\label{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a30531b65a782c6c77e3f180aa56698f5}} 
+\index{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$@{QtIoc::DependencyLoader$<$ QPointer$<$ Type $>$ $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename Type $>$ \\
+QPointer$<$ Type $>$ \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{Qt\+Ioc\+::\+Dependency\+Loader}}$<$ QPointer$<$ Type $>$ $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator -\/\texorpdfstring{$>$}{>} 
+
+\begin{DoxyReturn}{Returns}
+QPointer$<$\+Type$>$
+\end{DoxyReturn}
+Wrapper over \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}{load()}} for direct access to the instance. 
+
+Definition at line \mbox{\hyperlink{_dependency_loader_8h_source_l00128}{128}} of file \mbox{\hyperlink{_dependency_loader_8h_source}{Dependency\+Loader.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Helpers/\mbox{\hyperlink{_dependency_loader_8h}{Dependency\+Loader.\+h}}\end{DoxyCompactItemize}

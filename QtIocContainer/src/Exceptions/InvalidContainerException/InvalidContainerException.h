@@ -7,9 +7,7 @@
 namespace QtIoc {
 /*!
  * \brief The InvalidContainerException exception
- *
- * \details Внутренняя ошибка библиотеки.
- * В теории не может быть выброшена в принципе.
+ * \details AbstractContainer did not return an element
  */
 class QTIOCCONTAINER_EXPORT InvalidContainerException : public QException {
 private:

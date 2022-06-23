@@ -3,20 +3,28 @@
 #include <QPointer>
 
 namespace QtIoc {
-/**
+/*!
  * \brief The AbstractContainer class
- * \details Базовый класс контейнера для объекта,
- * сохраняемый в IocContainer-е.
- *
- * \author Ilya Bykonya
- * \date 21.06.2022
+ * \details The base container class for the instance,
+ * stored in IocContainer.
  */
 class QTIOCCONTAINER_EXPORT AbstractContainer {
 protected:
     using QObjectPointer = QPointer<QObject>;
 public:
     virtual ~AbstractContainer() = default;
+
+    /*!
+     * \brief load
+     * \return QPointer<QObject>
+     * \details Load object from container
+     */
     virtual QObjectPointer load() = 0;
+    /*!
+     * \brief contains
+     * \return bool
+     * \details Checks if an instance exists in a container
+     */
     virtual bool contains() const = 0;
 };
 }

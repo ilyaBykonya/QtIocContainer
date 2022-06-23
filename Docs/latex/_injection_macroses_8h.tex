@@ -1,0 +1,72 @@
+\hypertarget{_injection_macroses_8h}{}\doxysection{D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Helpers/\+Injection\+Macroses.h File Reference}
+\label{_injection_macroses_8h}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InjectionMacroses.h@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InjectionMacroses.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_injection_macroses_8h_a4649423a224f18755f2b8353544ecaad}{Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+DEFAULT}}(Type,  Name)
+\item 
+\#define \mbox{\hyperlink{_injection_macroses_8h_ad18416e354583d865b666eca558f7875}{Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+MEMBER}}(Type,  Name,  Member)
+\item 
+\#define \mbox{\hyperlink{_injection_macroses_8h_a8a44e46a6fb9c8d0dd767247ada8c306}{Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+METHOD}}(Type,  Name,  Method)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_injection_macroses_8h_a4649423a224f18755f2b8353544ecaad}\label{_injection_macroses_8h_a4649423a224f18755f2b8353544ecaad}} 
+\index{InjectionMacroses.h@{InjectionMacroses.h}!Q\_INJECT\_IN\_DEFAULT@{Q\_INJECT\_IN\_DEFAULT}}
+\index{Q\_INJECT\_IN\_DEFAULT@{Q\_INJECT\_IN\_DEFAULT}!InjectionMacroses.h@{InjectionMacroses.h}}
+\doxysubsubsection{\texorpdfstring{Q\_INJECT\_IN\_DEFAULT}{Q\_INJECT\_IN\_DEFAULT}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+DEFAULT(\begin{DoxyParamCaption}\item[{}]{Type,  }\item[{}]{Name }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    QPointer<Type> m\_\#\#Name; \(\backslash\)}
+\DoxyCodeLine{    Q\_INVOKABLE \textcolor{keywordtype}{void} inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}
+\DoxyCodeLine{        auto loaded = \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{QtIoc::DependencyLoader<Type>}}\{ container, \#Name \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}(); \(\backslash\)}
+\DoxyCodeLine{        if(loaded != m\_\#\#Name) \{ \(\backslash\)}
+\DoxyCodeLine{            m\_\#\#Name = \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{QtIoc::DependencyLoader<Type>}}\{ container, \#Name \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}(); \(\backslash\)}
+\DoxyCodeLine{        \}\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_injection_macroses_8h_source_l00003}{3}} of file \mbox{\hyperlink{_injection_macroses_8h_source}{Injection\+Macroses.\+h}}.
+
+\mbox{\Hypertarget{_injection_macroses_8h_ad18416e354583d865b666eca558f7875}\label{_injection_macroses_8h_ad18416e354583d865b666eca558f7875}} 
+\index{InjectionMacroses.h@{InjectionMacroses.h}!Q\_INJECT\_IN\_MEMBER@{Q\_INJECT\_IN\_MEMBER}}
+\index{Q\_INJECT\_IN\_MEMBER@{Q\_INJECT\_IN\_MEMBER}!InjectionMacroses.h@{InjectionMacroses.h}}
+\doxysubsubsection{\texorpdfstring{Q\_INJECT\_IN\_MEMBER}{Q\_INJECT\_IN\_MEMBER}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+MEMBER(\begin{DoxyParamCaption}\item[{}]{Type,  }\item[{}]{Name,  }\item[{}]{Member }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    Q\_INVOKABLE \textcolor{keywordtype}{void} inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}
+\DoxyCodeLine{        auto loaded = \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{QtIoc::DependencyLoader<Type>}}\{ container, \#Name \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}(); \(\backslash\)}
+\DoxyCodeLine{        if(loaded != \#\#Member) \{ \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{            \#\#Member = loaded; \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \}\(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \}}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_injection_macroses_8h_source_l00012}{12}} of file \mbox{\hyperlink{_injection_macroses_8h_source}{Injection\+Macroses.\+h}}.
+
+\mbox{\Hypertarget{_injection_macroses_8h_a8a44e46a6fb9c8d0dd767247ada8c306}\label{_injection_macroses_8h_a8a44e46a6fb9c8d0dd767247ada8c306}} 
+\index{InjectionMacroses.h@{InjectionMacroses.h}!Q\_INJECT\_IN\_METHOD@{Q\_INJECT\_IN\_METHOD}}
+\index{Q\_INJECT\_IN\_METHOD@{Q\_INJECT\_IN\_METHOD}!InjectionMacroses.h@{InjectionMacroses.h}}
+\doxysubsubsection{\texorpdfstring{Q\_INJECT\_IN\_METHOD}{Q\_INJECT\_IN\_METHOD}}
+{\footnotesize\ttfamily \#define Q\+\_\+\+INJECT\+\_\+\+IN\+\_\+\+METHOD(\begin{DoxyParamCaption}\item[{}]{Type,  }\item[{}]{Name,  }\item[{}]{Method }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    Q\_INVOKABLE \textcolor{keywordtype}{void} inject\_\#\#Name(QPointer<QtIoc::IocContainer> container) \{ \(\backslash\)}
+\DoxyCodeLine{\textcolor{preprocessor}{        \#\#Method(QtIoc::DependencyLoader<Type>\{ container, \#Name \}.load()); \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \}}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{_injection_macroses_8h_source_l00020}{20}} of file \mbox{\hyperlink{_injection_macroses_8h_source}{Injection\+Macroses.\+h}}.
+

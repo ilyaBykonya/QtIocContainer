@@ -1,0 +1,102 @@
+\hypertarget{class_qt_ioc_1_1_scope_container}{}\doxysection{Qt\+Ioc\+::Scope\+Container Class Reference}
+\label{class_qt_ioc_1_1_scope_container}\index{QtIoc::ScopeContainer@{QtIoc::ScopeContainer}}
+
+
+The \mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{Scope\+Container}} class.  
+
+
+
+
+{\ttfamily \#include $<$Scope\+Container.\+h$>$}
+
+Inheritance diagram for Qt\+Ioc\+::Scope\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_ioc_1_1_scope_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qt_ioc_1_1_scope_container_a66ef5eee19195266a813378cad337ab8}{Scope\+Container}} (Instacne\+Factory factory)
+\item 
+virtual Instance\+Pointer \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_acbce6cce0ed73efc6b4520b7c62750b2}{load}} () override
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_afbe18450d08a4400698a90e95f8fa6c8}{contains}} () const override
+\begin{DoxyCompactList}\small\item\em contains \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{Scope\+Container}} class. 
+
+The base container class for the object, providing scope-\/lifetime.
+
+Scope-\/lifetime\+: a new object is created for each call. 
+
+Definition at line \mbox{\hyperlink{_scope_container_8h_source_l00015}{15}} of file \mbox{\hyperlink{_scope_container_8h_source}{Scope\+Container.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_scope_container_a66ef5eee19195266a813378cad337ab8}\label{class_qt_ioc_1_1_scope_container_a66ef5eee19195266a813378cad337ab8}} 
+\index{QtIoc::ScopeContainer@{QtIoc::ScopeContainer}!ScopeContainer@{ScopeContainer}}
+\index{ScopeContainer@{ScopeContainer}!QtIoc::ScopeContainer@{QtIoc::ScopeContainer}}
+\doxysubsubsection{\texorpdfstring{ScopeContainer()}{ScopeContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Scope\+Container\+::\+Scope\+Container (\begin{DoxyParamCaption}\item[{Instacne\+Factory}]{factory }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_scope_container_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_scope_container_8cpp_source}{Scope\+Container.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_scope_container_afbe18450d08a4400698a90e95f8fa6c8}\label{class_qt_ioc_1_1_scope_container_afbe18450d08a4400698a90e95f8fa6c8}} 
+\index{QtIoc::ScopeContainer@{QtIoc::ScopeContainer}!contains@{contains}}
+\index{contains@{contains}!QtIoc::ScopeContainer@{QtIoc::ScopeContainer}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Qt\+Ioc\+::\+Scope\+Container\+::contains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+contains 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Checks if an instance exists in a container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_scope_container_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_scope_container_8cpp_source}{Scope\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_scope_container_acbce6cce0ed73efc6b4520b7c62750b2}\label{class_qt_ioc_1_1_scope_container_acbce6cce0ed73efc6b4520b7c62750b2}} 
+\index{QtIoc::ScopeContainer@{QtIoc::ScopeContainer}!load@{load}}
+\index{load@{load}!QtIoc::ScopeContainer@{QtIoc::ScopeContainer}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily Scope\+Container\+::\+Instance\+Pointer Qt\+Ioc\+::\+Scope\+Container\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+load 
+
+\begin{DoxyReturn}{Returns}
+QPointer$<$\+QObject$>$
+\end{DoxyReturn}
+Load object from container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_scope_container_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_scope_container_8cpp_source}{Scope\+Container.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Scope\+Container/\mbox{\hyperlink{_scope_container_8h}{Scope\+Container.\+h}}\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Scope\+Container/\mbox{\hyperlink{_scope_container_8cpp}{Scope\+Container.\+cpp}}\end{DoxyCompactItemize}

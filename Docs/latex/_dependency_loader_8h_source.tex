@@ -1,0 +1,97 @@
+\hypertarget{_dependency_loader_8h_source}{}\doxysection{Dependency\+Loader.\+h}
+\label{_dependency_loader_8h_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyLoader.h@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyLoader.h}}
+\mbox{\hyperlink{_dependency_loader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"{}}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dependency_injector_8h}{DependencyInjector.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <any>}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00015}00015 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00016}00016 \textcolor{keyword}{class }DependencyLoader;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00018}00018 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00019}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{DependencyLoader}} \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00020}00020 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00021}00021     QPointer<IocContainer> m\_container;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00022}00022     QString m\_name;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00023}00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00024}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_af735936f07ef5222a8432c3c9d73acd8}{00024}}     \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_af735936f07ef5222a8432c3c9d73acd8}{DependencyLoader}}(QPointer<IocContainer> container, \textcolor{keyword}{const} QString\& name)}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00025}00025         :m\_container\{ container \},}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00026}00026          m\_name\{ name \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00027}00027         \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00028}00028         \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00038}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{00038}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00039}00039         QPointer<Type> instance\{ qobject\_cast<Type*>(m\_container-\/>load\_dependency(m\_name)) \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00040}00040         \textcolor{keywordflow}{if}(instance.isNull())}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00041}00041             \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_qt_ioc_1_1_failed_intance_cast_on_load_exception}{FailedIntanceCastOnLoadException}}\{ \textcolor{keyword}{typeid}(Type).name() \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00043}00043         \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector}{DependencyInjector}}\{ m\_container \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a1e914ce5084c41d0e506c1989666c44e}{inject\_dependencies}}(instance);}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00044}00044         \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00051}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a56d934db09ca46ec80c80133e4165139}{00051}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a56d934db09ca46ec80c80133e4165139}{operator-\/>}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00052}00052         \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}();}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00054}00054 \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00056}00056 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00057}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4}{00057}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{DependencyLoader}}<Type*> \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00058}00058 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00059}00059     QPointer<IocContainer> m\_container;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00060}00060     QString m\_name;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00061}00061 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00062}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_ac5d0418c50bfe0bb9bb565423362a1bf}{00062}}     \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_ac5d0418c50bfe0bb9bb565423362a1bf}{DependencyLoader}}(QPointer<IocContainer> container, \textcolor{keyword}{const} QString\& name)}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00063}00063         :m\_container\{ container \},}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00064}00064          m\_name\{ name \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00065}00065         \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00066}00066         \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00076}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_a06ab105cfc6e0009a1e33886bf2fd654}{00076}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_a06ab105cfc6e0009a1e33886bf2fd654}{load}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00077}00077         QPointer<Type> instance\{ qobject\_cast<Type*>(m\_container-\/>load\_dependency(m\_name)) \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00078}00078         \textcolor{keywordflow}{if}(instance.isNull())}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00079}00079             \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_qt_ioc_1_1_failed_intance_cast_on_load_exception}{FailedIntanceCastOnLoadException}}\{ \textcolor{keyword}{typeid}(Type).name() \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00081}00081         \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector}{DependencyInjector}}\{ m\_container \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a1e914ce5084c41d0e506c1989666c44e}{inject\_dependencies}}(instance);}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00082}00082         \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00083}00083     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00089}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_a723bef6c72c9ac34b68f5c7510306d49}{00089}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4_a723bef6c72c9ac34b68f5c7510306d49}{operator-\/>}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00090}00090         \textcolor{keywordflow}{return} this-\/>load();}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00092}00092 \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00094}00094 \textcolor{keyword}{template}<\textcolor{keyword}{typename} Type>}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00095}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4}{00095}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{DependencyLoader}}<QPointer<Type>> \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00096}00096 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00097}00097     QPointer<IocContainer> m\_container;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00098}00098     QString m\_name;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00099}00099 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00100}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_ada9b2b55854583f27a3fc64e661d5c69}{00100}}     \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_ada9b2b55854583f27a3fc64e661d5c69}{DependencyLoader}}(QPointer<IocContainer> container, \textcolor{keyword}{const} QString\& name)}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00101}00101         :m\_container\{ container \},}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00102}00102          m\_name\{ name \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00103}00103         \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00104}00104         \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00115}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}{00115}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a3e82f85e08d8e033fb12ce354f51b440}{load}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00116}00116         QPointer<Type> instance\{ qobject\_cast<Type*>(m\_container-\/>load\_dependency(m\_name)) \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00117}00117         \textcolor{keywordflow}{if}(instance.isNull())}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00118}00118             \textcolor{keywordflow}{throw} \mbox{\hyperlink{class_qt_ioc_1_1_failed_intance_cast_on_load_exception}{FailedIntanceCastOnLoadException}}\{ \textcolor{keyword}{typeid}(Type).name() \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00120}00120         \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector}{DependencyInjector}}\{ m\_container \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a1e914ce5084c41d0e506c1989666c44e}{inject\_dependencies}}(instance);}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00121}00121         \textcolor{keywordflow}{return} instance;}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00122}00122     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00128}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a30531b65a782c6c77e3f180aa56698f5}{00128}}     QPointer<Type> \mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4_a30531b65a782c6c77e3f180aa56698f5}{operator-\/>}}() \{}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00129}00129         \textcolor{keywordflow}{return} this-\/>\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}();}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00130}00130     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00131}00131 \};}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00132}00132 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00134}00134 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_loader_8h_source_l00135}00135 }
+
+\end{DoxyCode}

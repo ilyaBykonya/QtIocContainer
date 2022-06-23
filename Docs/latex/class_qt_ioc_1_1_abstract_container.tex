@@ -1,0 +1,104 @@
+\hypertarget{class_qt_ioc_1_1_abstract_container}{}\doxysection{Qt\+Ioc\+::Abstract\+Container Class Reference}
+\label{class_qt_ioc_1_1_abstract_container}\index{QtIoc::AbstractContainer@{QtIoc::AbstractContainer}}
+
+
+The \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{Abstract\+Container}} class.  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Container.\+h$>$}
+
+Inheritance diagram for Qt\+Ioc\+::Abstract\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_ioc_1_1_abstract_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a4027e6cb3985bc4bee732c99fd20af00}{$\sim$\+Abstract\+Container}} ()=default
+\item 
+virtual \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{QObject\+Pointer}} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}{load}} ()=0
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}{contains}} () const =0
+\begin{DoxyCompactList}\small\item\em contains \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{QObject\+Pointer}} = QPointer$<$ QObject $>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{Abstract\+Container}} class. 
+
+The base container class for the instance, stored in \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{Ioc\+Container}}. 
+
+Definition at line \mbox{\hyperlink{_abstract_container_8h_source_l00011}{11}} of file \mbox{\hyperlink{_abstract_container_8h_source}{Abstract\+Container.\+h}}.
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}\label{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}} 
+\index{QtIoc::AbstractContainer@{QtIoc::AbstractContainer}!QObjectPointer@{QObjectPointer}}
+\index{QObjectPointer@{QObjectPointer}!QtIoc::AbstractContainer@{QtIoc::AbstractContainer}}
+\doxysubsubsection{\texorpdfstring{QObjectPointer}{QObjectPointer}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{Qt\+Ioc\+::\+Abstract\+Container\+::\+QObject\+Pointer}} =  QPointer$<$QObject$>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_abstract_container_8h_source_l00013}{13}} of file \mbox{\hyperlink{_abstract_container_8h_source}{Abstract\+Container.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_abstract_container_a4027e6cb3985bc4bee732c99fd20af00}\label{class_qt_ioc_1_1_abstract_container_a4027e6cb3985bc4bee732c99fd20af00}} 
+\index{QtIoc::AbstractContainer@{QtIoc::AbstractContainer}!````~AbstractContainer@{$\sim$AbstractContainer}}
+\index{````~AbstractContainer@{$\sim$AbstractContainer}!QtIoc::AbstractContainer@{QtIoc::AbstractContainer}}
+\doxysubsubsection{\texorpdfstring{$\sim$AbstractContainer()}{~AbstractContainer()}}
+{\footnotesize\ttfamily virtual Qt\+Ioc\+::\+Abstract\+Container\+::$\sim$\+Abstract\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}\label{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}} 
+\index{QtIoc::AbstractContainer@{QtIoc::AbstractContainer}!contains@{contains}}
+\index{contains@{contains}!QtIoc::AbstractContainer@{QtIoc::AbstractContainer}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily virtual bool Qt\+Ioc\+::\+Abstract\+Container\+::contains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+contains 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Checks if an instance exists in a container 
+
+Implemented in \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_afbe18450d08a4400698a90e95f8fa6c8}{Qt\+Ioc\+::\+Scope\+Container}}, \mbox{\hyperlink{class_qt_ioc_1_1_shared_container_aea4fc62a22dc5a83512aa56d60f61d2e}{Qt\+Ioc\+::\+Shared\+Container}}, and \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a38dfc4202fe3ce1b83075cf8c7cff7c0}{Qt\+Ioc\+::\+Singleton\+Container}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}\label{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}} 
+\index{QtIoc::AbstractContainer@{QtIoc::AbstractContainer}!load@{load}}
+\index{load@{load}!QtIoc::AbstractContainer@{QtIoc::AbstractContainer}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{QObject\+Pointer}} Qt\+Ioc\+::\+Abstract\+Container\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+load 
+
+\begin{DoxyReturn}{Returns}
+QPointer$<$\+QObject$>$
+\end{DoxyReturn}
+Load object from container 
+
+Implemented in \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_acbce6cce0ed73efc6b4520b7c62750b2}{Qt\+Ioc\+::\+Scope\+Container}}, \mbox{\hyperlink{class_qt_ioc_1_1_shared_container_ad179361ad542488324f11bc4ad77ceec}{Qt\+Ioc\+::\+Shared\+Container}}, and \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a390bc747f79081af023f0f19fe8d6d1c}{Qt\+Ioc\+::\+Singleton\+Container}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Abstract\+Container/\mbox{\hyperlink{_abstract_container_8h}{Abstract\+Container.\+h}}\end{DoxyCompactItemize}

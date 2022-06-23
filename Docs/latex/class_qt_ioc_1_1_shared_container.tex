@@ -1,0 +1,114 @@
+\hypertarget{class_qt_ioc_1_1_shared_container}{}\doxysection{Qt\+Ioc\+::Shared\+Container Class Reference}
+\label{class_qt_ioc_1_1_shared_container}\index{QtIoc::SharedContainer@{QtIoc::SharedContainer}}
+
+
+The \mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{Shared\+Container}} class.  
+
+
+
+
+{\ttfamily \#include $<$Shared\+Container.\+h$>$}
+
+Inheritance diagram for Qt\+Ioc\+::Shared\+Container\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qt_ioc_1_1_shared_container}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qt_ioc_1_1_shared_container_a5e9f515038aa3ac6d48aca78863cc93a}{Shared\+Container}} (Instacne\+Factory factory)
+\item 
+virtual \mbox{\hyperlink{class_qt_ioc_1_1_shared_container_abcdbbd2ecf8b140f1ed189d0b9601376}{$\sim$\+Shared\+Container}} () override
+\item 
+virtual Instance\+Pointer \mbox{\hyperlink{class_qt_ioc_1_1_shared_container_ad179361ad542488324f11bc4ad77ceec}{load}} () override
+\begin{DoxyCompactList}\small\item\em load \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_qt_ioc_1_1_shared_container_aea4fc62a22dc5a83512aa56d60f61d2e}{contains}} () const override
+\begin{DoxyCompactList}\small\item\em contains \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_qt_ioc_1_1_shared_container}{Shared\+Container}} class. 
+
+Базовый класс контейнера для объекта, обеспечивающего shared-\/lifetime.
+
+Shared-\/lifetime\+: The object lives as long as it is used by someone from the outside. When all strong references to it are removed, it will be destroyed. When requested again, the destroyed object will be re-\/created via a factory call. 
+
+Definition at line \mbox{\hyperlink{_shared_container_8h_source_l00018}{18}} of file \mbox{\hyperlink{_shared_container_8h_source}{Shared\+Container.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_shared_container_a5e9f515038aa3ac6d48aca78863cc93a}\label{class_qt_ioc_1_1_shared_container_a5e9f515038aa3ac6d48aca78863cc93a}} 
+\index{QtIoc::SharedContainer@{QtIoc::SharedContainer}!SharedContainer@{SharedContainer}}
+\index{SharedContainer@{SharedContainer}!QtIoc::SharedContainer@{QtIoc::SharedContainer}}
+\doxysubsubsection{\texorpdfstring{SharedContainer()}{SharedContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Shared\+Container\+::\+Shared\+Container (\begin{DoxyParamCaption}\item[{Instacne\+Factory}]{factory }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_shared_container_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{_shared_container_8cpp_source}{Shared\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_shared_container_abcdbbd2ecf8b140f1ed189d0b9601376}\label{class_qt_ioc_1_1_shared_container_abcdbbd2ecf8b140f1ed189d0b9601376}} 
+\index{QtIoc::SharedContainer@{QtIoc::SharedContainer}!````~SharedContainer@{$\sim$SharedContainer}}
+\index{````~SharedContainer@{$\sim$SharedContainer}!QtIoc::SharedContainer@{QtIoc::SharedContainer}}
+\doxysubsubsection{\texorpdfstring{$\sim$SharedContainer()}{~SharedContainer()}}
+{\footnotesize\ttfamily Qt\+Ioc\+::\+Shared\+Container\+::$\sim$\+Shared\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_shared_container_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{_shared_container_8cpp_source}{Shared\+Container.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qt_ioc_1_1_shared_container_aea4fc62a22dc5a83512aa56d60f61d2e}\label{class_qt_ioc_1_1_shared_container_aea4fc62a22dc5a83512aa56d60f61d2e}} 
+\index{QtIoc::SharedContainer@{QtIoc::SharedContainer}!contains@{contains}}
+\index{contains@{contains}!QtIoc::SharedContainer@{QtIoc::SharedContainer}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Qt\+Ioc\+::\+Shared\+Container\+::contains (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+contains 
+
+\begin{DoxyReturn}{Returns}
+bool
+\end{DoxyReturn}
+Checks if an instance exists in a container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a7de186025bbd6c52bf762d20c9844b85}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_shared_container_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{_shared_container_8cpp_source}{Shared\+Container.\+cpp}}.
+
+\mbox{\Hypertarget{class_qt_ioc_1_1_shared_container_ad179361ad542488324f11bc4ad77ceec}\label{class_qt_ioc_1_1_shared_container_ad179361ad542488324f11bc4ad77ceec}} 
+\index{QtIoc::SharedContainer@{QtIoc::SharedContainer}!load@{load}}
+\index{load@{load}!QtIoc::SharedContainer@{QtIoc::SharedContainer}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily Shared\+Container\+::\+Instance\+Pointer Qt\+Ioc\+::\+Shared\+Container\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+load 
+
+\begin{DoxyReturn}{Returns}
+QPointer$<$\+QObject$>$
+\end{DoxyReturn}
+Load object from container 
+
+Implements \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_a34cffe10689f3da27b35f4d5f19e5b78}{Qt\+Ioc\+::\+Abstract\+Container}}.
+
+
+
+Definition at line \mbox{\hyperlink{_shared_container_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{_shared_container_8cpp_source}{Shared\+Container.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Shared\+Container/\mbox{\hyperlink{_shared_container_8h}{Shared\+Container.\+h}}\item 
+D\+:/\+Dev/\+Custom\+Libraries/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/\+Qt\+Ioc\+Container/src/\+Instance\+Containers/\+Shared\+Container/\mbox{\hyperlink{_shared_container_8cpp}{Shared\+Container.\+cpp}}\end{DoxyCompactItemize}
