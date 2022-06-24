@@ -3,7 +3,7 @@ CONFIG(debug, debug|release) { LIB_SUFFIX = d }
 QT -= gui
 TEMPLATE = lib
 CONFIG += c++11 build_all
-DEFINES += QTIOCCONTAINER_LIBRARY
+DEFINES += QTDEPENDENCYINJECTION_LIBRARY
 
 TARGET = QtIocContainer$${LIB_SUFFIX}
 DLLDESTDIR = $${PWD}/lib
@@ -37,7 +37,7 @@ SOURCES += \
     src/IocContainer/IocContainer.cpp
 
 DISTFILES += \
-    include/QtIocContainer
+    include/QtDependencyInjection
 
 # Default rules for deployment.
 unix {

@@ -6,7 +6,7 @@
 
 namespace QtIoc {
 /*!
- * \brief The ElementNotStoredException exception
+ * \brief The FailedIntanceCastOnLoadException exception
  * \details The instance could not be converted to the required type
  */
 class QTDEPENDENCYINJECTION_EXPORT FailedIntanceCastOnLoadException : public QException {

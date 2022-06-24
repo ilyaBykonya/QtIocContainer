@@ -4,9 +4,9 @@
 
 namespace QtIoc {
 /*!
- * \brief The StaticContainer class
- * \details Базовый класс контейнера для объекта,
- * обеспечивающего singleton-lifetime.
+ * \brief The SingletonContainer class
+ * \details The base container class for the object,
+ * providing singleton-lifetime.
  *
  * Singleton-lifetime:
  * One object for each call.

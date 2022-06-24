@@ -7,7 +7,7 @@
 namespace QtIoc {
 /*!
  * \brief The IocContainer class
- * \details CRUD репозиторий для хранения контейнеров с объектами
+ * \details CRUD-repository for storing containers with objects.
  */
 class QTDEPENDENCYINJECTION_EXPORT IocContainer : public QObject {
 private:

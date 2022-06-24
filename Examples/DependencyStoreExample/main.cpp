@@ -1,5 +1,5 @@
 #include <QCoreApplication>
-#include <QtIocContainer>
+#include <QtDependencyInjection>
 #include <QTimer>
 #include <QDebug>
 

@@ -7,8 +7,8 @@
 namespace QtIoc {
 /*!
  * \brief The SharedContainer class
- * \details Базовый класс контейнера для объекта,
- * обеспечивающего shared-lifetime.
+ * \details The base container class for the object,
+ * providing shared-lifetime.
  *
  * Shared-lifetime:
  * The object lives as long as it is used by someone from the outside.
