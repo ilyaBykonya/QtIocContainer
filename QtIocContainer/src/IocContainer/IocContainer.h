@@ -1,6 +1,5 @@
 #pragma once
 #include "../InstanceContainers/AbstractContainer/AbstractContainer.h"
-#include "../QtIocContainer_global.h"
 #include <unordered_map>
 #include <type_traits>
 #include <string>
@@ -10,7 +9,7 @@ namespace QtIoc {
  * \brief The IocContainer class
  * \details CRUD репозиторий для хранения контейнеров с объектами
  */
-class QTIOCCONTAINER_EXPORT IocContainer : public QObject {
+class QTDEPENDENCYINJECTION_EXPORT IocContainer : public QObject {
 private:
     using InstancePointer = QPointer<QObject>;
     using InstanceFactory = std::function<InstancePointer()>;

@@ -2,7 +2,7 @@ CONFIG(debug, debug|release) { LIB_SUFFIX = d }
 
 QT -= gui
 TEMPLATE = lib
-CONFIG += c++11
+CONFIG += c++11 build_all
 DEFINES += QTIOCCONTAINER_LIBRARY
 
 TARGET = QtIocContainer$${LIB_SUFFIX}
@@ -17,7 +17,6 @@ HEADERS += \
     src/Helpers/DependencyLoader.h \
     src/Helpers/InjectionMacroses.h \
     src/InstanceContainers/AbstractContainer/AbstractContainer.h \
-    src/QtIocContainer_global.h \
     src/Exceptions/ElementNotStoredException/ElementNotStoredException.h \
     src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h \
     src/Exceptions/InvalidContainerException/InvalidContainerException.h \
@@ -25,7 +24,8 @@ HEADERS += \
     src/InstanceContainers/ScopeContainer/ScopeContainer.h \
     src/InstanceContainers/SharedContainer/SharedContainer.h \
     src/InstanceContainers/SingletonContainer/SingletonContainer.h \
-    src/IocContainer/IocContainer.h
+    src/IocContainer/IocContainer.h \
+    src/QtDependencyInjection_global.h
 
 SOURCES += \
     src/Exceptions/ElementNotStoredException/ElementNotStoredException.cpp \

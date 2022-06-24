@@ -12,7 +12,7 @@ namespace QtIoc {
  * Scope-lifetime:
  * a new object is created for each call.
  */
-class QTIOCCONTAINER_EXPORT ScopeContainer : public AbstractContainer {
+class QTDEPENDENCYINJECTION_EXPORT ScopeContainer : public AbstractContainer {
 private:
     using InstancePointer = typename AbstractContainer::QObjectPointer;
     using InstacneFactory = std::function<InstancePointer()>;

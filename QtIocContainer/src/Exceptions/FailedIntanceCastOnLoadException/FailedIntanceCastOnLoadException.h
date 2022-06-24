@@ -1,5 +1,5 @@
 #pragma once
-#include "../../QtIocContainer_global.h"
+#include "../../QtDependencyInjection_global.h"
 #include <QException>
 #include <QString>
 
@@ -9,7 +9,7 @@ namespace QtIoc {
  * \brief The ElementNotStoredException exception
  * \details The instance could not be converted to the required type
  */
-class QTIOCCONTAINER_EXPORT FailedIntanceCastOnLoadException : public QException {
+class QTDEPENDENCYINJECTION_EXPORT FailedIntanceCastOnLoadException : public QException {
 private:
     QString m_description;
 public:
