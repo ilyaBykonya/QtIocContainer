@@ -1,6 +1,6 @@
 #pragma once
 #include "../AbstractService/AbstractService.h"
-#include <QtDependencyInjection>
+#include <QtIocContainer>
 
 class MainService : public AbstractService {
 private:

@@ -1,7 +1,7 @@
 #include "Services/MainService/MainService.h"
 #include "Services/SubService/SubService.h"
 #include <QCoreApplication>
-#include <QtDependencyInjection>
+#include <QtIocContainer>
 #include <QTimer>
 #include <QDebug>
 

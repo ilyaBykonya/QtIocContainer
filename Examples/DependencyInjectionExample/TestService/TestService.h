@@ -1,5 +1,5 @@
 #pragma once
-#include <QtDependencyInjection>
+#include <QtIocContainer>
 #include <QTimer>
 
 class TestService : public QObject

@@ -1,5 +1,5 @@
 #include <QCoreApplication>
-#include <QtDependencyInjection>
+#include <QtIocContainer>
 #include "TestService/TestService.h"
 #include <QMetaMethod>
 #include <QDebug>

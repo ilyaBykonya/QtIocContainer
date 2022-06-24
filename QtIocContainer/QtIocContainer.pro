@@ -3,7 +3,7 @@ CONFIG(debug, debug|release) { LIB_SUFFIX = d }
 QT -= gui
 TEMPLATE = lib
 CONFIG += c++11 build_all
-DEFINES += QTDEPENDENCYINJECTION_LIBRARY
+DEFINES += QTIOCCONTAINER_LIBRARY
 
 TARGET = QtIocContainer$${LIB_SUFFIX}
 DLLDESTDIR = $${PWD}/lib
@@ -25,7 +25,7 @@ HEADERS += \
     src/InstanceContainers/SharedContainer/SharedContainer.h \
     src/InstanceContainers/SingletonContainer/SingletonContainer.h \
     src/IocContainer/IocContainer.h \
-    src/QtDependencyInjection_global.h
+    src/QtIocContainer_global.h
 
 SOURCES += \
     src/Exceptions/ElementNotStoredException/ElementNotStoredException.cpp \
@@ -37,7 +37,7 @@ SOURCES += \
     src/IocContainer/IocContainer.cpp
 
 DISTFILES += \
-    include/QtDependencyInjection
+    include/QtIocContainer
 
 # Default rules for deployment.
 unix {

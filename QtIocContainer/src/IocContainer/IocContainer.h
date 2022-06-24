@@ -9,7 +9,7 @@ namespace QtIoc {
  * \brief The IocContainer class
  * \details CRUD-repository for storing containers with objects.
  */
-class QTDEPENDENCYINJECTION_EXPORT IocContainer : public QObject {
+class QTIOCCONTAINER_EXPORT IocContainer : public QObject {
 private:
     using InstancePointer = QPointer<QObject>;
     using InstanceFactory = std::function<InstancePointer()>;

@@ -1,5 +1,5 @@
 #pragma once
-#include "../../QtDependencyInjection_global.h"
+#include "../../QtIocContainer_global.h"
 #include "../AbstractContainer/AbstractContainer.h"
 #include <functional>
 
@@ -15,7 +15,7 @@ namespace QtIoc {
  * When all strong references to it are removed, it will be destroyed.
  * When requested again, the destroyed object will be re-created via a factory call.
  */
-class QTDEPENDENCYINJECTION_EXPORT SharedContainer : public AbstractContainer {
+class QTIOCCONTAINER_EXPORT SharedContainer : public AbstractContainer {
 private:
     using InstancePointer = typename AbstractContainer::QObjectPointer;
     using InstacneFactory = std::function<InstancePointer()>;

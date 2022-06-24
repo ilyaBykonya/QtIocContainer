@@ -1,5 +1,5 @@
 #pragma once
-#include "../../QtDependencyInjection_global.h"
+#include "../../QtIocContainer_global.h"
 #include <QPointer>
 
 namespace QtIoc {
@@ -8,7 +8,7 @@ namespace QtIoc {
  * \details The base container class for the instance,
  * stored in IocContainer.
  */
-class QTDEPENDENCYINJECTION_EXPORT AbstractContainer {
+class QTIOCCONTAINER_EXPORT AbstractContainer {
 protected:
     using QObjectPointer = QPointer<QObject>;
 public:
