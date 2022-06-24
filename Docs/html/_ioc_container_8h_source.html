@@ -87,32 +87,31 @@ $(document).ready(function(){initNavTree('_ioc_container_8h_source.html',''); in
 <div class="contents">
 <a href="_ioc_container_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../InstanceContainers/AbstractContainer/AbstractContainer.h&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;../QtIocContainer_global.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_qt_ioc.html">QtIoc</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_ioc_container.html">   13</a></span><span class="keyword">class </span><a class="code hl_define" href="_qt_ioc_container__global_8h.html#a48cb04df58f65f0f0d1d31647718f664">QTIOCCONTAINER_EXPORT</a> <a class="code hl_class" href="class_qt_ioc_1_1_ioc_container.html">IocContainer</a> : <span class="keyword">public</span> QObject {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using </span>InstancePointer = QPointer&lt;QObject&gt;;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">using </span>InstanceFactory = std::function&lt;InstancePointer()&gt;;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">using </span>ContainerPointer = std::shared_ptr&lt;AbstractContainer&gt;;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    std::unordered_map&lt;QString, ContainerPointer&gt; m_instances;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::unordered_map&lt;QString, ContainerPointer&gt;::iterator takeIterator(<span class="keyword">const</span> QString&amp; name);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    InstancePointer loadInstance(std::unordered_map&lt;QString, ContainerPointer&gt;::iterator iter);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_qt_ioc_1_1_ioc_container.html">IocContainer</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> store_dependency(<span class="keyword">const</span> QString&amp; name, ContainerPointer container);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QPointer&lt;QObject&gt; load_dependency(<span class="keyword">const</span> QString&amp; name);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> remove_dependency(<span class="keyword">const</span> QString&amp; name);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_qt_ioc.html">QtIoc</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_ioc_container.html">   12</a></span><span class="keyword">class </span><a class="code hl_define" href="_qt_ioc_container__global_8h.html#a48cb04df58f65f0f0d1d31647718f664">QTIOCCONTAINER_EXPORT</a> <a class="code hl_class" href="class_qt_ioc_1_1_ioc_container.html">IocContainer</a> : <span class="keyword">public</span> QObject {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">using </span>InstancePointer = QPointer&lt;QObject&gt;;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using </span>InstanceFactory = std::function&lt;InstancePointer()&gt;;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">using </span>ContainerPointer = std::shared_ptr&lt;AbstractContainer&gt;;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    std::unordered_map&lt;QString, ContainerPointer&gt; m_instances;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::unordered_map&lt;QString, ContainerPointer&gt;::iterator takeIterator(<span class="keyword">const</span> QString&amp; name);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    InstancePointer loadInstance(std::unordered_map&lt;QString, ContainerPointer&gt;::iterator iter);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="class_qt_ioc_1_1_ioc_container.html">IocContainer</a>(QObject* parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> store_dependency(<span class="keyword">const</span> QString&amp; name, ContainerPointer container);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QPointer&lt;QObject&gt; load_dependency(<span class="keyword">const</span> QString&amp; name);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> remove_dependency(<span class="keyword">const</span> QString&amp; name);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>};</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 <div class="ttc" id="a_qt_ioc_container__global_8h_html_a48cb04df58f65f0f0d1d31647718f664"><div class="ttname"><a href="_qt_ioc_container__global_8h.html#a48cb04df58f65f0f0d1d31647718f664">QTIOCCONTAINER_EXPORT</a></div><div class="ttdeci">#define QTIOCCONTAINER_EXPORT</div><div class="ttdef"><b>Definition:</b> <a href="_qt_ioc_container__global_8h_source.html#l00008">QtIocContainer_global.h:8</a></div></div>
-<div class="ttc" id="aclass_qt_ioc_1_1_ioc_container_html"><div class="ttname"><a href="class_qt_ioc_1_1_ioc_container.html">QtIoc::IocContainer</a></div><div class="ttdoc">The IocContainer class.</div><div class="ttdef"><b>Definition:</b> <a href="_ioc_container_8h_source.html#l00013">IocContainer.h:13</a></div></div>
+<div class="ttc" id="aclass_qt_ioc_1_1_ioc_container_html"><div class="ttname"><a href="class_qt_ioc_1_1_ioc_container.html">QtIoc::IocContainer</a></div><div class="ttdoc">The IocContainer class.</div><div class="ttdef"><b>Definition:</b> <a href="_ioc_container_8h_source.html#l00012">IocContainer.h:12</a></div></div>
 <div class="ttc" id="anamespace_qt_ioc_html"><div class="ttname"><a href="namespace_qt_ioc.html">QtIoc</a></div><div class="ttdef"><b>Definition:</b> <a href="_element_not_stored_exception_8cpp_source.html#l00003">ElementNotStoredException.cpp:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

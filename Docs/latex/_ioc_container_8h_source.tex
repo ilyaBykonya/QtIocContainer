@@ -4,29 +4,28 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
 \DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../InstanceContainers/AbstractContainer/AbstractContainer.h"{}}}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../QtIocContainer\_global.h"{}}}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <unordered\_map>}}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <type\_traits>}}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <string>}}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00007}00007 }
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00008}00008 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00013}\mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{_qt_ioc_container__global_8h_a48cb04df58f65f0f0d1d31647718f664}{QTIOCCONTAINER\_EXPORT}} \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}} : \textcolor{keyword}{public} QObject \{}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00014}00014 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00015}00015     \textcolor{keyword}{using }InstancePointer = QPointer<QObject>;}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00016}00016     \textcolor{keyword}{using }InstanceFactory = std::function<InstancePointer()>;}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00017}00017     \textcolor{keyword}{using }ContainerPointer = std::shared\_ptr<AbstractContainer>;}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00018}00018 }
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00019}00019     std::unordered\_map<QString, ContainerPointer> m\_instances;}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00020}00020 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00021}00021     std::unordered\_map<QString, ContainerPointer>::iterator takeIterator(\textcolor{keyword}{const} QString\& name);}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00022}00022     InstancePointer loadInstance(std::unordered\_map<QString, ContainerPointer>::iterator iter);}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00023}00023 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00024}00024     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}}(QObject* parent = \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00025}00025 }
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00031}00031     \textcolor{keywordtype}{void} store\_dependency(\textcolor{keyword}{const} QString\& name, ContainerPointer container);}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00038}00038     QPointer<QObject> load\_dependency(\textcolor{keyword}{const} QString\& name);}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00045}00045     \textcolor{keywordtype}{void} remove\_dependency(\textcolor{keyword}{const} QString\& name);}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00046}00046 \};}
-\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00047}00047 \}}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00007}00007 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00012}\mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{_qt_ioc_container__global_8h_a48cb04df58f65f0f0d1d31647718f664}{QTIOCCONTAINER\_EXPORT}} \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}} : \textcolor{keyword}{public} QObject \{}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00013}00013 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00014}00014     \textcolor{keyword}{using }InstancePointer = QPointer<QObject>;}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00015}00015     \textcolor{keyword}{using }InstanceFactory = std::function<InstancePointer()>;}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00016}00016     \textcolor{keyword}{using }ContainerPointer = std::shared\_ptr<AbstractContainer>;}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00018}00018     std::unordered\_map<QString, ContainerPointer> m\_instances;}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00019}00019 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00020}00020     std::unordered\_map<QString, ContainerPointer>::iterator takeIterator(\textcolor{keyword}{const} QString\& name);}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00021}00021     InstancePointer loadInstance(std::unordered\_map<QString, ContainerPointer>::iterator iter);}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00022}00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00023}00023     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}}(QObject* parent = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00030}00030     \textcolor{keywordtype}{void} store\_dependency(\textcolor{keyword}{const} QString\& name, ContainerPointer container);}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00037}00037     QPointer<QObject> load\_dependency(\textcolor{keyword}{const} QString\& name);}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00044}00044     \textcolor{keywordtype}{void} remove\_dependency(\textcolor{keyword}{const} QString\& name);}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00045}00045 \};}
+\DoxyCodeLine{\Hypertarget{_ioc_container_8h_source_l00046}00046 \}}
 
 \end{DoxyCode}

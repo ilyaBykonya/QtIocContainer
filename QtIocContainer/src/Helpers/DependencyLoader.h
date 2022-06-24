@@ -10,7 +10,7 @@ namespace QtIoc {
 /*!
  * \brief The DependenciesLoader class
  *
- * \details Класс для загрузки зависимости из контейнера.
+ * \details Class for loading a dependency from a container.
  */
 template<typename Type>
 class DependencyLoader;
@@ -29,7 +29,7 @@ public:
 
     /*!
      * \brief load ()
-     * \details Загружает инстанс объекта из контейнера и внедряет в него зависимости.
+     * \details Loads an instance of an object from a container and injects dependencies into it.
      * \return QPointer<Type>
      * \throw ElementNotStoredException
      * \throw InvalidContainerException
@@ -46,7 +46,7 @@ public:
     /*!
      * \brief operator ->
      * \return QPointer<Type>
-     * \details Обёртка над load() для прямого доступа к инстансу.
+     * \details Wrapper over load() for direct access to the instance.
      */
     QPointer<Type> operator->() {
         return this->load();
@@ -67,7 +67,7 @@ public:
 
     /*!
      * \brief load ()
-     * \details Загружает инстанс объекта из контейнера и внедряет в него зависимости.
+     * \details Loads an instance of an object from a container and injects dependencies into it.
      * \return QPointer<Type>
      * \throw ElementNotStoredException
      * \throw InvalidContainerException
@@ -84,7 +84,7 @@ public:
     /*!
      * \brief operator ->
      * \return QPointer<Type>
-     * \details Обёртка над load() для прямого доступа к инстансу.
+     * \details Wrapper over load() for direct access to the instance.
      */
     QPointer<Type> operator->() {
         return this->load();
