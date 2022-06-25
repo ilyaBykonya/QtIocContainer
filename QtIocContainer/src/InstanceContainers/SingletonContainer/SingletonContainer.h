@@ -1,5 +1,4 @@
 #pragma once
-#include "../../QtIocContainer_global.h"
 #include "../AbstractContainer/AbstractContainer.h"
 
 namespace QtIoc {
@@ -11,7 +10,7 @@ namespace QtIoc {
  * Singleton-lifetime:
  * One object for each call.
  */
-class QTIOCCONTAINER_EXPORT SingletonContainer : public AbstractContainer {
+class SingletonContainer : public AbstractContainer {
 private:
     using InstancePointer = typename AbstractContainer::QObjectPointer;
     InstancePointer m_instance;

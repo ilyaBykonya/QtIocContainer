@@ -7,6 +7,8 @@ CONFIG -= app_bundle
 # In order to do so, uncomment the following line.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+include($${PWD}/../../QtIocContainer/QtIocContainer.pri)
+
 SOURCES += \
         main.cpp
 
@@ -15,9 +17,3 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../QtIocContainer/lib/ -lQtIocContainer
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../QtIocContainer/lib/ -lQtIocContainerd
-else:unix: LIBS += -L$$PWD/../../QtIocContainer/lib/ -lQtIocContainer
-
-INCLUDEPATH += $$PWD/../../QtIocContainer/include
-DEPENDPATH += $$PWD/../../QtIocContainer/include

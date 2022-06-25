@@ -1,4 +1,3 @@
-#include "../src/QtIocContainer_global.h"
 #include "../src/Exceptions/ElementNotStoredException/ElementNotStoredException.h"
 #include "../src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"
 #include "../src/Exceptions/InvalidContainerException/InvalidContainerException.h"
