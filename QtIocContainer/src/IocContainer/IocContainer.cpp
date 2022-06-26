@@ -8,6 +8,11 @@ IocContainer::IocContainer(QObject* parent)
     {
     }
 
+QPointer<IocContainer> IocContainer::instance() {
+    static QPointer<IocContainer> instance{ new IocContainer };
+    return instance;
+}
+
 std::unordered_map<QString, IocContainer::ContainerPointer>::iterator IocContainer::takeIterator(const QString& name) {
     auto found_iter = m_instances.find(name);
     if (found_iter == m_instances.end())

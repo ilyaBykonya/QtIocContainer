@@ -21,6 +21,7 @@ private:
     InstancePointer loadInstance(std::unordered_map<QString, ContainerPointer>::iterator iter);
 public:
     explicit IocContainer(QObject* parent = nullptr);
+    static QPointer<IocContainer> instance();
 
     /*!
      * \brief store_dependency
