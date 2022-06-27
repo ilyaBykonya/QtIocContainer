@@ -1,6 +1,8 @@
 CONFIG += c++11
 
 HEADERS += \
+    $$PWD/src/Helpers/DependencyInjector/DependencyInjector.h \
+    $$PWD/src/Helpers/DependencyLoader/DependencyLoader.h \
     $${PWD}/src/Helpers/DependencyLoader.h \
     $${PWD}/src/Helpers/InjectionMacroses.h \
     $${PWD}/src/InstanceContainers/AbstractContainer/AbstractContainer.h \
@@ -14,6 +16,7 @@ HEADERS += \
     $${PWD}/src/IocContainer/IocContainer.h
 
 SOURCES += \
+    $$PWD/src/Helpers/DependencyInjector/DependencyInjector.cpp \
     $${PWD}/src/Exceptions/ElementNotStoredException/ElementNotStoredException.cpp \
     $${PWD}/src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.cpp \
     $${PWD}/src/Exceptions/InvalidContainerException/InvalidContainerException.cpp \

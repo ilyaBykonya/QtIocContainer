@@ -12,6 +12,13 @@ int main(int argc, char *argv[])
     container->store_dependency("timer", std::make_shared<QtIoc::SingletonContainer>(new QTimer));
     container->store_dependency("service", std::make_shared<QtIoc::ScopeContainer>([]{ return new TestService; }));
 
+    QObject* service = new TestService;
+    auto meta_info = service->metaObject();
+    for(int i = 0; i < meta_info->methodCount(); ++i) {
+        auto meta_method = meta_info->method(i);
+        qDebug() << meta_method.name();
+    }
+
 
     QtIoc::DependencyLoader<TestService>{ container, "service" }.load()->start();
     QtIoc::DependencyLoader<QTimer>{ container, "timer" }->start(500);
