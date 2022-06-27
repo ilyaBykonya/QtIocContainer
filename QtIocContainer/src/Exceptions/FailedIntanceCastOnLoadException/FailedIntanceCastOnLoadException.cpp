@@ -1,12 +1,11 @@
 #include "FailedIntanceCastOnLoadException.h"
 
 namespace QtIoc {
-FailedIntanceCastOnLoadException::FailedIntanceCastOnLoadException(const QString& name)
-    :QException{},
-     m_description{ QString{ "Invalid cast: [%1]" }.arg(name) }
+FailedIntanceCastOnLoadException::FailedIntanceCastOnLoadException(const QString&)
+    :QException{}
     {
     }
 const char* FailedIntanceCastOnLoadException::what() const {
-    return m_description.toStdString().c_str();
+    return "Cast dependency from QObject to some type was failed";
 }
 }

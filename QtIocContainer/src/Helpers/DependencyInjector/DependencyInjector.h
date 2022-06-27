@@ -10,6 +10,7 @@ class DependencyInjector {
 private:
     QPointer<IocContainer> m_container;
 public:
+    DependencyInjector();
     DependencyInjector(QPointer<IocContainer> container);
 
     /*!

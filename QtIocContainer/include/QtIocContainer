@@ -3,6 +3,8 @@
 #include "../src/Exceptions/InvalidContainerException/InvalidContainerException.h"
 #include "../src/Helpers/DependencyInjector/DependencyInjector.h"
 #include "../src/Helpers/DependencyLoader/DependencyLoader.h"
+#include "../src/Helpers/InstanceCreator/InstanceCreator.h"
+#include "../src/Helpers/InstanceCaller/InstanceCaller.h"
 #include "../src/Helpers/InjectionMacroses.h"
 #include "../src/InstanceContainers/AbstractContainer/AbstractContainer.h"
 #include "../src/InstanceContainers/ScopeContainer/ScopeContainer.h"

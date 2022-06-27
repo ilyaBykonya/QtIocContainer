@@ -1,6 +1,10 @@
 #include "DependencyInjector.h"
 
 namespace QtIoc {
+DependencyInjector::DependencyInjector()
+    :m_container{ IocContainer::instance() }
+    {
+    }
 DependencyInjector::DependencyInjector(QPointer<IocContainer> container)
     :m_container{ container }
     {
