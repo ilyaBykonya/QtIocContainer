@@ -26,7 +26,7 @@ public:
      */
     void inject_dependencies(QObject* object);
 private:
-    QList<QMetaMethod> select_inject_methods(const QMetaObject* meta_info);
+    static QList<QMetaMethod> select_inject_methods(const QMetaObject* meta_info);
     void call_inject_methods(void* object, QList<QMetaMethod> injectors);
 };
 }
