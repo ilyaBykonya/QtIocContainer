@@ -3,21 +3,20 @@
 \mbox{\hyperlink{_singleton_container_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../../QtIocContainer\_global.h"{}}}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00003}00003 \textcolor{preprocessor}{\#include "{}../AbstractContainer/AbstractContainer.h"{}}}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00004}00004 }
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00014}\mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{00014}} \textcolor{keyword}{class }\mbox{\hyperlink{_qt_ioc_container__global_8h_a48cb04df58f65f0f0d1d31647718f664}{QTIOCCONTAINER\_EXPORT}} \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{SingletonContainer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{AbstractContainer}} \{}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00015}00015 \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00016}00016     \textcolor{keyword}{using }InstancePointer = \textcolor{keyword}{typename} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{AbstractContainer::QObjectPointer}};}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00017}00017     InstancePointer m\_instance;}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00018}00018 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00019}00019     \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{SingletonContainer}}(InstancePointer instance);}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00020}00020     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{\string~SingletonContainer}}() \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00021}00021 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00022}00022     \textcolor{keyword}{virtual} InstancePointer load() \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00023}00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} contains() \textcolor{keyword}{const override};}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00024}00024 \};}
-\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00025}00025 \}}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../AbstractContainer/AbstractContainer.h"{}}}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00013}\mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_singleton_container}{SingletonContainer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{AbstractContainer}} \{}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00014}00014 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00015}00015     \textcolor{keyword}{using }InstancePointer = \textcolor{keyword}{typename} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{AbstractContainer::QObjectPointer}};}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00016}00016     InstancePointer m\_instance;}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00017}00017 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00018}00018     \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a8f5f28293d7b438d6691bdf8626281d4}{SingletonContainer}}(InstancePointer instance);}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00019}00019     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_aac0e0f0b5d57cc9e5f84fe405a23297d}{\string~SingletonContainer}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00021}00021     \textcolor{keyword}{virtual} InstancePointer \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a390bc747f79081af023f0f19fe8d6d1c}{load}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00022}00022     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_qt_ioc_1_1_singleton_container_a38dfc4202fe3ce1b83075cf8c7cff7c0}{contains}}() \textcolor{keyword}{const override};}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00023}00023 \};}
+\DoxyCodeLine{\Hypertarget{_singleton_container_8h_source_l00024}00024 \}}
 
 \end{DoxyCode}

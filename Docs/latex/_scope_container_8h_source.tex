@@ -8,15 +8,15 @@
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00004}00004 }
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00005}00005 }
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
-\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00015}\mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{_qt_ioc_container__global_8h_a48cb04df58f65f0f0d1d31647718f664}{QTIOCCONTAINER\_EXPORT}} \mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{ScopeContainer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{AbstractContainer}} \{}
+\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00015}\mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{00015}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{ScopeContainer}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container}{AbstractContainer}} \{}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00016}00016 \textcolor{keyword}{private}:}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00017}00017     \textcolor{keyword}{using }InstancePointer = \textcolor{keyword}{typename} \mbox{\hyperlink{class_qt_ioc_1_1_abstract_container_ade50e7e39639b0144ba497f0629c954f}{AbstractContainer::QObjectPointer}};}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00018}00018     \textcolor{keyword}{using }InstacneFactory = std::function<InstancePointer()>;}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00019}00019     InstacneFactory m\_factory;}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00020}00020 \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00021}00021     \mbox{\hyperlink{class_qt_ioc_1_1_scope_container}{ScopeContainer}}(InstacneFactory factory);}
-\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00022}00022     \textcolor{keyword}{virtual} InstancePointer load() \textcolor{keyword}{override};}
-\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00023}00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} contains() \textcolor{keyword}{const override};}
+\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00021}00021     \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_a66ef5eee19195266a813378cad337ab8}{ScopeContainer}}(InstacneFactory factory);}
+\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00022}00022     \textcolor{keyword}{virtual} InstancePointer \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_acbce6cce0ed73efc6b4520b7c62750b2}{load}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00023}00023     \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_qt_ioc_1_1_scope_container_afbe18450d08a4400698a90e95f8fa6c8}{contains}}() \textcolor{keyword}{const override};}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00024}00024 \};}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00025}00025 \}}
 \DoxyCodeLine{\Hypertarget{_scope_container_8h_source_l00026}00026 }

@@ -9,6 +9,8 @@ var hierarchy =
     [ "QtIoc::DependencyLoader< Type >", "class_qt_ioc_1_1_dependency_loader.html", null ],
     [ "QtIoc::DependencyLoader< QPointer< Type > >", "class_qt_ioc_1_1_dependency_loader_3_01_q_pointer_3_01_type_01_4_01_4.html", null ],
     [ "QtIoc::DependencyLoader< Type * >", "class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4.html", null ],
+    [ "QtIoc::InstanceCaller", "class_qt_ioc_1_1_instance_caller.html", null ],
+    [ "QtIoc::InstanceCreator", "class_qt_ioc_1_1_instance_creator.html", null ],
     [ "QException", null, [
       [ "QtIoc::ElementNotStoredException", "class_qt_ioc_1_1_element_not_stored_exception.html", null ],
       [ "QtIoc::FailedIntanceCastOnLoadException", "class_qt_ioc_1_1_failed_intance_cast_on_load_exception.html", null ],

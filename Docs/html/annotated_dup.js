@@ -8,6 +8,8 @@ var annotated_dup =
       [ "DependencyLoader< Type * >", "class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4.html", "class_qt_ioc_1_1_dependency_loader_3_01_type_01_5_01_4" ],
       [ "ElementNotStoredException", "class_qt_ioc_1_1_element_not_stored_exception.html", "class_qt_ioc_1_1_element_not_stored_exception" ],
       [ "FailedIntanceCastOnLoadException", "class_qt_ioc_1_1_failed_intance_cast_on_load_exception.html", "class_qt_ioc_1_1_failed_intance_cast_on_load_exception" ],
+      [ "InstanceCaller", "class_qt_ioc_1_1_instance_caller.html", "class_qt_ioc_1_1_instance_caller" ],
+      [ "InstanceCreator", "class_qt_ioc_1_1_instance_creator.html", "class_qt_ioc_1_1_instance_creator" ],
       [ "InvalidContainerException", "class_qt_ioc_1_1_invalid_container_exception.html", "class_qt_ioc_1_1_invalid_container_exception" ],
       [ "IocContainer", "class_qt_ioc_1_1_ioc_container.html", "class_qt_ioc_1_1_ioc_container" ],
       [ "ScopeContainer", "class_qt_ioc_1_1_scope_container.html", "class_qt_ioc_1_1_scope_container" ],

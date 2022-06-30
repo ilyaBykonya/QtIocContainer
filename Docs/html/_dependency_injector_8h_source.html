@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.4"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QtIocContainer: D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyInjector.h Source File</title>
+<title>QtIocContainer: D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyInjector/DependencyInjector.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -86,64 +86,36 @@ $(document).ready(function(){initNavTree('_dependency_injector_8h_source.html','
 </div><!--header-->
 <div class="contents">
 <a href="_dependency_injector_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../IocContainer/IocContainer.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;../../IocContainer/IocContainer.h&quot;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;QMetaMethod&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_qt_ioc.html">QtIoc</a> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_dependency_injector.html">   10</a></span><span class="keyword">class </span><a class="code hl_class" href="class_qt_ioc_1_1_dependency_injector.html">DependencyInjector</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    QPointer&lt;IocContainer&gt; m_container;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_dependency_injector.html#adb9f685b78c65080aca7c9f4a4eee1c5">   14</a></span>    <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#adb9f685b78c65080aca7c9f4a4eee1c5">DependencyInjector</a>(QPointer&lt;IocContainer&gt; container)</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        :m_container{ container }</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        }</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_dependency_injector.html#a1e914ce5084c41d0e506c1989666c44e">   25</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#a1e914ce5084c41d0e506c1989666c44e">inject_dependencies</a>(QPointer&lt;Type&gt; <span class="keywordtype">object</span>) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        call_inject_methods(<span class="keywordtype">object</span>, select_inject_methods(object-&gt;metaObject()));</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Type&gt;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_dependency_injector.html#a5f71f207c530bd70cd18407a70e6ceb2">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#a5f71f207c530bd70cd18407a70e6ceb2">inject_dependencies</a>(Type* <span class="keywordtype">object</span>) {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        call_inject_methods(<span class="keywordtype">object</span>, select_inject_methods(object-&gt;metaObject()));</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QList&lt;QMetaMethod&gt; select_inject_methods(<span class="keyword">const</span> QMetaObject* meta_info) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        QList&lt;QMetaMethod&gt; result;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index = 0; index &lt; meta_info-&gt;methodCount(); ++index) {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keyword">auto</span> method_info = meta_info-&gt;method(index);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            <span class="keywordflow">if</span>(method_info.name().startsWith(<span class="stringliteral">&quot;inject_&quot;</span>) == <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            <span class="keyword">auto</span> params = method_info.parameterTypes();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keywordflow">if</span>(params.size() != 1)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keywordflow">if</span>(params.first() != <span class="stringliteral">&quot;QPointer&lt;QtIoc::IocContainer&gt;&quot;</span>)</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            result.push_back(method_info);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> call_inject_methods(<span class="keywordtype">void</span>* <span class="keywordtype">object</span>, QList&lt;QMetaMethod&gt; injectors) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keywordflow">for</span>(<span class="keyword">auto</span> injector: injectors)</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            injector.invokeOnGadget(<span class="keywordtype">object</span>, Q_ARG(QPointer&lt;QtIoc::IocContainer&gt;, m_container));</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
-<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html">QtIoc::DependencyInjector</a></div><div class="ttdoc">The DependencyInjector class.</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8h_source.html#l00010">DependencyInjector.h:10</a></div></div>
-<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html_a1e914ce5084c41d0e506c1989666c44e"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html#a1e914ce5084c41d0e506c1989666c44e">QtIoc::DependencyInjector::inject_dependencies</a></div><div class="ttdeci">void inject_dependencies(QPointer&lt; Type &gt; object)</div><div class="ttdoc">inject_dependencies</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8h_source.html#l00025">DependencyInjector.h:25</a></div></div>
-<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html_a5f71f207c530bd70cd18407a70e6ceb2"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html#a5f71f207c530bd70cd18407a70e6ceb2">QtIoc::DependencyInjector::inject_dependencies</a></div><div class="ttdeci">void inject_dependencies(Type *object)</div><div class="ttdoc">inject_dependencies</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8h_source.html#l00034">DependencyInjector.h:34</a></div></div>
-<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html_adb9f685b78c65080aca7c9f4a4eee1c5"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html#adb9f685b78c65080aca7c9f4a4eee1c5">QtIoc::DependencyInjector::DependencyInjector</a></div><div class="ttdeci">DependencyInjector(QPointer&lt; IocContainer &gt; container)</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8h_source.html#l00014">DependencyInjector.h:14</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_qt_ioc.html">QtIoc</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_dependency_injector.html">    9</a></span><span class="keyword">class </span><a class="code hl_class" href="class_qt_ioc_1_1_dependency_injector.html">DependencyInjector</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    QPointer&lt;IocContainer&gt; m_container;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#a5ad1d347e9c4fa034f60405b54a8ae34">DependencyInjector</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#a5ad1d347e9c4fa034f60405b54a8ae34">DependencyInjector</a>(QPointer&lt;IocContainer&gt; container);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#aa9a5e2866a39dc806a57222ccc5a51f7">inject_dependencies</a>(QPointer&lt;QObject&gt; <span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_qt_ioc_1_1_dependency_injector.html#aa9a5e2866a39dc806a57222ccc5a51f7">inject_dependencies</a>(QObject* <span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">static</span> QList&lt;QMetaMethod&gt; select_inject_methods(<span class="keyword">const</span> QMetaObject* meta_info);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> call_inject_methods(<span class="keywordtype">void</span>* <span class="keywordtype">object</span>, QList&lt;QMetaMethod&gt; injectors);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html">QtIoc::DependencyInjector</a></div><div class="ttdoc">The DependencyInjector class.</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8h_source.html#l00009">DependencyInjector.h:9</a></div></div>
+<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html_a5ad1d347e9c4fa034f60405b54a8ae34"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html#a5ad1d347e9c4fa034f60405b54a8ae34">QtIoc::DependencyInjector::DependencyInjector</a></div><div class="ttdeci">DependencyInjector()</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8cpp_source.html#l00004">DependencyInjector.cpp:4</a></div></div>
+<div class="ttc" id="aclass_qt_ioc_1_1_dependency_injector_html_aa9a5e2866a39dc806a57222ccc5a51f7"><div class="ttname"><a href="class_qt_ioc_1_1_dependency_injector.html#aa9a5e2866a39dc806a57222ccc5a51f7">QtIoc::DependencyInjector::inject_dependencies</a></div><div class="ttdeci">void inject_dependencies(QPointer&lt; QObject &gt; object)</div><div class="ttdoc">inject_dependencies</div><div class="ttdef"><b>Definition:</b> <a href="_dependency_injector_8cpp_source.html#l00013">DependencyInjector.cpp:13</a></div></div>
 <div class="ttc" id="anamespace_qt_ioc_html"><div class="ttname"><a href="namespace_qt_ioc.html">QtIoc</a></div><div class="ttdef"><b>Definition:</b> <a href="_element_not_stored_exception_8cpp_source.html#l00003">ElementNotStoredException.cpp:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_df46ae6939e06d9268c441cb3608f9f3.html">QtIocContainer</a></li><li class="navelem"><a class="el" href="dir_daeb1d79c53e210a84acb13a8005e574.html">src</a></li><li class="navelem"><a class="el" href="dir_f16d0d0476abb9a9f1de68608893405d.html">Helpers</a></li><li class="navelem"><a class="el" href="_dependency_injector_8h.html">DependencyInjector.h</a></li>
+    <li class="navelem"><a class="el" href="dir_df46ae6939e06d9268c441cb3608f9f3.html">QtIocContainer</a></li><li class="navelem"><a class="el" href="dir_daeb1d79c53e210a84acb13a8005e574.html">src</a></li><li class="navelem"><a class="el" href="dir_f16d0d0476abb9a9f1de68608893405d.html">Helpers</a></li><li class="navelem"><a class="el" href="dir_04b291a711a60a538b5dfe30a3a62ced.html">DependencyInjector</a></li><li class="navelem"><a class="el" href="_dependency_injector_8h.html">DependencyInjector.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4 </li>
   </ul>
 </div>

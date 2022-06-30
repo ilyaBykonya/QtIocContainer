@@ -89,21 +89,20 @@ $(document).ready(function(){initNavTree('_invalid_container_exception_8cpp_sour
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_qt_ioc.html">QtIoc</a> {</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_invalid_container_exception.html#a7aa857f74f0dda1f3b69c451527efffb">    5</a></span><a class="code hl_function" href="class_qt_ioc_1_1_invalid_container_exception.html#a7aa857f74f0dda1f3b69c451527efffb">InvalidContainerException::InvalidContainerException</a>(<span class="keyword">const</span> QString&amp; name)</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    :QException{},</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>     m_description{ QString{ <span class="stringliteral">&quot;Invalid internal container: [%1]&quot;</span> }.arg(name) }</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">   10</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">InvalidContainerException::what</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> m_description.toStdString().c_str();</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_invalid_container_exception.html#a7aa857f74f0dda1f3b69c451527efffb">    5</a></span><a class="code hl_function" href="class_qt_ioc_1_1_invalid_container_exception.html#a7aa857f74f0dda1f3b69c451527efffb">InvalidContainerException::InvalidContainerException</a>(<span class="keyword">const</span> QString&amp;)</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    :QException{}</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    }</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">    9</a></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">InvalidContainerException::what</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Abstract dependency instance container return nullptr&quot;</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="ttc" id="a_invalid_container_exception_8h_html"><div class="ttname"><a href="_invalid_container_exception_8h.html">InvalidContainerException.h</a></div></div>
 <div class="ttc" id="aclass_qt_ioc_1_1_invalid_container_exception_html_a7aa857f74f0dda1f3b69c451527efffb"><div class="ttname"><a href="class_qt_ioc_1_1_invalid_container_exception.html#a7aa857f74f0dda1f3b69c451527efffb">QtIoc::InvalidContainerException::InvalidContainerException</a></div><div class="ttdeci">InvalidContainerException(const QString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_invalid_container_exception_8cpp_source.html#l00005">InvalidContainerException.cpp:5</a></div></div>
-<div class="ttc" id="aclass_qt_ioc_1_1_invalid_container_exception_html_abce4a6e38056cf73b16f9706fe0d26f7"><div class="ttname"><a href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">QtIoc::InvalidContainerException::what</a></div><div class="ttdeci">virtual const char * what() const override</div><div class="ttdef"><b>Definition:</b> <a href="_invalid_container_exception_8cpp_source.html#l00010">InvalidContainerException.cpp:10</a></div></div>
+<div class="ttc" id="aclass_qt_ioc_1_1_invalid_container_exception_html_abce4a6e38056cf73b16f9706fe0d26f7"><div class="ttname"><a href="class_qt_ioc_1_1_invalid_container_exception.html#abce4a6e38056cf73b16f9706fe0d26f7">QtIoc::InvalidContainerException::what</a></div><div class="ttdeci">virtual const char * what() const override</div><div class="ttdef"><b>Definition:</b> <a href="_invalid_container_exception_8cpp_source.html#l00009">InvalidContainerException.cpp:9</a></div></div>
 <div class="ttc" id="anamespace_qt_ioc_html"><div class="ttname"><a href="namespace_qt_ioc.html">QtIoc</a></div><div class="ttdef"><b>Definition:</b> <a href="_element_not_stored_exception_8cpp_source.html#l00003">ElementNotStoredException.cpp:3</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
