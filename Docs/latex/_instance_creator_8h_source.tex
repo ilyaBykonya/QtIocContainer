@@ -1,0 +1,33 @@
+\hypertarget{_instance_creator_8h_source}{}\doxysection{Instance\+Creator.\+h}
+\label{_instance_creator_8h_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCreator/InstanceCreator.h@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCreator/InstanceCreator.h}}
+\mbox{\hyperlink{_instance_creator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00002}00002 \textcolor{preprocessor}{\#include "{}../DependencyLoader/DependencyLoader.h"{}}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <QMetaObject>}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <array>}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00009}00009 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00010}\mbox{\hyperlink{class_qt_ioc_1_1_instance_creator}{00010}} \textcolor{keyword}{class }\mbox{\hyperlink{class_qt_ioc_1_1_instance_creator}{InstanceCreator}} \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00011}00011 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00012}00012     QPointer<IocContainer> m\_container;}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00013}00013 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00014}00014     \mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a5cfd60a2c8216b74ef31983761f861a3}{InstanceCreator}}();}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00015}00015     \mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a5cfd60a2c8216b74ef31983761f861a3}{InstanceCreator}}(QPointer<IocContainer> container);}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00017}00017     \textcolor{keyword}{template}<\textcolor{keyword}{typename} ResultType, \textcolor{keyword}{typename}...Args>}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00018}\mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a9de70e802bbaeaeea309de967a64b2ca}{00018}}     QPointer<ResultType> \mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a9de70e802bbaeaeea309de967a64b2ca}{create}}(\textcolor{keyword}{const} std::array<QString, \textcolor{keyword}{sizeof}...(Args)>\& dependenciesNames) \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00019}00019         \textcolor{keywordflow}{return} createPrivate<ResultType, Args...>(dependenciesNames, 0);}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00021}00021 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00022}00022     \textcolor{keyword}{template}<\textcolor{keyword}{typename} ResultType, \textcolor{keyword}{typename}...Args>}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00023}00023     QPointer<ResultType> createPrivate(\textcolor{keyword}{const} std::array<QString, \textcolor{keyword}{sizeof}...(Args)>\& dependenciesNames, \textcolor{keywordtype}{int} currentIndex) \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00024}00024         \textcolor{keywordflow}{return} QPointer<ResultType>\{ \textcolor{keyword}{new} ResultType(\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader}{DependencyLoader<Args>}}\{ m\_container, dependenciesNames[currentIndex++] \}.\mbox{\hyperlink{class_qt_ioc_1_1_dependency_loader_a0a85bed759ccc5a411ead9ed06406b2c}{load}}()...) \};}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00026}00026 \};}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8h_source_l00027}00027 \}}
+
+\end{DoxyCode}

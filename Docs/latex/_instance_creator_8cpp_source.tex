@@ -1,0 +1,19 @@
+\hypertarget{_instance_creator_8cpp_source}{}\doxysection{Instance\+Creator.\+cpp}
+\label{_instance_creator_8cpp_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCreator/InstanceCreator.cpp@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCreator/InstanceCreator.cpp}}
+\mbox{\hyperlink{_instance_creator_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_instance_creator_8h}{InstanceCreator.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00005}\mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a5cfd60a2c8216b74ef31983761f861a3}{00005}} \mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a5cfd60a2c8216b74ef31983761f861a3}{InstanceCreator::InstanceCreator}}()}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00006}00006     :m\_container\{ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}}::instance() \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00007}00007     \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00008}00008     \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00009}\mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_aab15c511ce9b9893b354b9773743f1d4}{00009}} \mbox{\hyperlink{class_qt_ioc_1_1_instance_creator_a5cfd60a2c8216b74ef31983761f861a3}{InstanceCreator::InstanceCreator}}(QPointer<IocContainer> container)}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00010}00010     :m\_container\{ std::move(container) \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00012}00012     \}}
+\DoxyCodeLine{\Hypertarget{_instance_creator_8cpp_source_l00013}00013 \}}
+
+\end{DoxyCode}

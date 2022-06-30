@@ -1,9 +1,8 @@
 #pragma once
-#include "../Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"
-#include "DependencyInjector.h"
+#include "../../Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"
+#include "../DependencyInjector/DependencyInjector.h"
 #include <stdexcept>
 #include <memory>
-#include <any>
 
 namespace QtIoc {
 
@@ -21,6 +20,11 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
+    DependencyLoader(const QString& name)
+        :m_container{ IocContainer::instance() },
+         m_name{ name }
+        {
+        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
@@ -59,6 +63,11 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
+    DependencyLoader(const QString& name)
+        :m_container{ IocContainer::instance() },
+         m_name{ name }
+        {
+        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
@@ -97,6 +106,11 @@ private:
     QPointer<IocContainer> m_container;
     QString m_name;
 public:
+    DependencyLoader(const QString& name)
+        :m_container{ IocContainer::instance() },
+         m_name{ name }
+        {
+        }
     DependencyLoader(QPointer<IocContainer> container, const QString& name)
         :m_container{ container },
          m_name{ name }
@@ -129,7 +143,4 @@ public:
         return this->load();
     }
 };
-
-
 }
-

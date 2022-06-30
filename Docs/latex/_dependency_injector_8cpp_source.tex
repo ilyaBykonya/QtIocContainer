@@ -1,0 +1,50 @@
+\hypertarget{_dependency_injector_8cpp_source}{}\doxysection{Dependency\+Injector.\+cpp}
+\label{_dependency_injector_8cpp_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyInjector/DependencyInjector.cpp@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/DependencyInjector/DependencyInjector.cpp}}
+\mbox{\hyperlink{_dependency_injector_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_dependency_injector_8h}{DependencyInjector.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00004}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a5ad1d347e9c4fa034f60405b54a8ae34}{00004}} \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a5ad1d347e9c4fa034f60405b54a8ae34}{DependencyInjector::DependencyInjector}}()}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00005}00005     :m\_container\{ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}}::instance() \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00006}00006     \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00007}00007     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00008}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_adb9f685b78c65080aca7c9f4a4eee1c5}{00008}} \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_a5ad1d347e9c4fa034f60405b54a8ae34}{DependencyInjector::DependencyInjector}}(QPointer<IocContainer> container)}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00009}00009     :m\_container\{ container \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00013}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_aa9a5e2866a39dc806a57222ccc5a51f7}{00013}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_aa9a5e2866a39dc806a57222ccc5a51f7}{DependencyInjector::inject\_dependencies}}(QPointer<QObject> \textcolor{keywordtype}{object}) \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00014}00014     call\_inject\_methods(\textcolor{keywordtype}{object}, select\_inject\_methods(object-\/>metaObject()));}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00016}\mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_aafff0588135228abd278499650dc9fe0}{00016}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_qt_ioc_1_1_dependency_injector_aa9a5e2866a39dc806a57222ccc5a51f7}{DependencyInjector::inject\_dependencies}}(QObject* \textcolor{keywordtype}{object}) \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00017}00017     call\_inject\_methods(\textcolor{keywordtype}{object}, select\_inject\_methods(object-\/>metaObject()));}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00020}00020 QList<QMetaMethod> DependencyInjector::select\_inject\_methods(\textcolor{keyword}{const} QMetaObject* meta\_info) \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00021}00021     QList<QMetaMethod> result;}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00022}00022     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} index = 0; index < meta\_info-\/>methodCount(); ++index) \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00023}00023         \textcolor{keyword}{auto} method\_info = meta\_info-\/>method(index);}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00024}00024         \textcolor{keywordflow}{if}(method\_info.name().startsWith(\textcolor{stringliteral}{"{}inject\_"{}}) == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00025}00025             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00027}00027         \textcolor{keyword}{auto} params = method\_info.parameterTypes();}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00028}00028         \textcolor{keywordflow}{if}(params.size() != 1)}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00029}00029             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00030}00030         \textcolor{keywordflow}{if}(params.first() != \textcolor{stringliteral}{"{}QPointer<QtIoc::IocContainer>"{}})}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00031}00031             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00033}00033         result.push\_back(method\_info);}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00035}00035     \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00037}00037 \textcolor{keywordtype}{void} DependencyInjector::call\_inject\_methods(\textcolor{keywordtype}{void}* \textcolor{keywordtype}{object}, QList<QMetaMethod> injectors) \{}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00038}00038     \textcolor{keywordflow}{for}(\textcolor{keyword}{auto} injector: injectors)}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00039}00039         injector.invokeOnGadget(\textcolor{keywordtype}{object}, Q\_ARG(QPointer<QtIoc::IocContainer>, m\_container));}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00040}00040 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{_dependency_injector_8cpp_source_l00044}00044 }
+
+\end{DoxyCode}

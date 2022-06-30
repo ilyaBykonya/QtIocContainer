@@ -1,0 +1,18 @@
+\hypertarget{_instance_caller_8cpp_source}{}\doxysection{Instance\+Caller.\+cpp}
+\label{_instance_caller_8cpp_source}\index{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCaller/InstanceCaller.cpp@{D:/Dev/CustomLibraries/QtIocContainer/QtIocContainer/QtIocContainer/src/Helpers/InstanceCaller/InstanceCaller.cpp}}
+\mbox{\hyperlink{_instance_caller_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_instance_caller_8h}{InstanceCaller.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00003}00003 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_qt_ioc}{QtIoc}} \{}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00004}\mbox{\hyperlink{class_qt_ioc_1_1_instance_caller_a7731677f4b4aa44a7fc31228ab7a4c59}{00004}} \mbox{\hyperlink{class_qt_ioc_1_1_instance_caller_a7731677f4b4aa44a7fc31228ab7a4c59}{InstanceCaller::InstanceCaller}}()}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00005}00005     :m\_container\{ \mbox{\hyperlink{class_qt_ioc_1_1_ioc_container}{IocContainer}}::instance() \}}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00006}00006     \{}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00007}00007     \}}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00008}\mbox{\hyperlink{class_qt_ioc_1_1_instance_caller_aaac19521c48a9b2d2e0b12c9135109aa}{00008}} \mbox{\hyperlink{class_qt_ioc_1_1_instance_caller_a7731677f4b4aa44a7fc31228ab7a4c59}{InstanceCaller::InstanceCaller}}(QPointer<IocContainer> container)}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00009}00009     :m\_container\{ std::move(container) \}}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00010}00010     \{}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00011}00011     \}}
+\DoxyCodeLine{\Hypertarget{_instance_caller_8cpp_source_l00012}00012 \}}
+
+\end{DoxyCode}
