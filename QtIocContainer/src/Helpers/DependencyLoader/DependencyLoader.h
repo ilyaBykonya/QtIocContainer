@@ -1,5 +1,5 @@
 #pragma once
-#include "../../Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"
+#include "../../Exceptions/FailedInstanceCastOnLoadException/FailedInstanceCastOnLoadException.h"
 #include "../DependencyInjector/DependencyInjector.h"
 #include <stdexcept>
 #include <memory>
@@ -37,12 +37,12 @@ public:
      * \return QPointer<Type>
      * \throw ElementNotStoredException
      * \throw InvalidContainerException
-     * \throw FailedIntanceCastOnLoadException
+     * \throw FailedInstanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
         if(instance.isNull())
-            throw FailedIntanceCastOnLoadException{ typeid(Type).name() };
+            throw FailedInstanceCastOnLoadException{ typeid(Type).name() };
 
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;
@@ -80,12 +80,12 @@ public:
      * \return QPointer<Type>
      * \throw ElementNotStoredException
      * \throw InvalidContainerException
-     * \throw FailedIntanceCastOnLoadException
+     * \throw FailedInstanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
         if(instance.isNull())
-            throw FailedIntanceCastOnLoadException{ typeid(Type).name() };
+            throw FailedInstanceCastOnLoadException{ typeid(Type).name() };
 
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;
@@ -124,12 +124,12 @@ public:
      * \return QPointer<Type>
      * \throw ElementNotStoredException
      * \throw InvalidContainerException
-     * \throw FailedIntanceCastOnLoadException
+     * \throw FailedInstanceCastOnLoadException
      */
     QPointer<Type> load() {
         QPointer<Type> instance{ qobject_cast<Type*>(m_container->load_dependency(m_name)) };
         if(instance.isNull())
-            throw FailedIntanceCastOnLoadException{ typeid(Type).name() };
+            throw FailedInstanceCastOnLoadException{ typeid(Type).name() };
 
         DependencyInjector{ m_container }.inject_dependencies(instance);
         return instance;

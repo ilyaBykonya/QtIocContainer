@@ -5,12 +5,12 @@
 
 namespace QtIoc {
 /*!
- * \brief The FailedIntanceCastOnLoadException exception
+ * \brief The FailedInstanceCastOnLoadException exception
  * \details The instance could not be converted to the required type
  */
-class FailedIntanceCastOnLoadException : public QException {
+class FailedInstanceCastOnLoadException : public QException {
 public:
-    FailedIntanceCastOnLoadException(const QString& name);
+    FailedInstanceCastOnLoadException(const QString& name);
     virtual const char *what() const override;
 };
 }

@@ -1,5 +1,5 @@
 #include "../src/Exceptions/ElementNotStoredException/ElementNotStoredException.h"
-#include "../src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h"
+#include "../src/Exceptions/FailedInstanceCastOnLoadException/FailedInstanceCastOnLoadException.h"
 #include "../src/Exceptions/InvalidContainerException/InvalidContainerException.h"
 #include "../src/Helpers/DependencyInjector/DependencyInjector.h"
 #include "../src/Helpers/DependencyLoader/DependencyLoader.h"

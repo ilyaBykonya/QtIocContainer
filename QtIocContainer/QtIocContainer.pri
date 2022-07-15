@@ -7,7 +7,7 @@ HEADERS += \
     $$PWD/src/Helpers/DependencyLoader/DependencyLoader.h \
     $$PWD/src/Helpers/InjectionMacroses.h \
     $$PWD/src/Exceptions/ElementNotStoredException/ElementNotStoredException.h \
-    $$PWD/src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.h \
+    $$PWD/src/Exceptions/FailedInstanceCastOnLoadException/FailedInstanceCastOnLoadException.h \
     $$PWD/src/Exceptions/InvalidContainerException/InvalidContainerException.h \
     $$PWD/src/InstanceContainers/AbstractContainer/AbstractContainer.h \
     $$PWD/src/InstanceContainers/ScopeContainer/ScopeContainer.h \
@@ -20,7 +20,7 @@ SOURCES += \
     $$PWD/src/Helpers/InstanceCreator/InstanceCreator.cpp \
     $$PWD/src/Helpers/DependencyInjector/DependencyInjector.cpp \
     $$PWD/src/Exceptions/ElementNotStoredException/ElementNotStoredException.cpp \
-    $$PWD/src/Exceptions/FailedIntanceCastOnLoadException/FailedIntanceCastOnLoadException.cpp \
+    $$PWD/src/Exceptions/FailedInstanceCastOnLoadException/FailedInstanceCastOnLoadException.cpp \
     $$PWD/src/Exceptions/InvalidContainerException/InvalidContainerException.cpp \
     $$PWD/src/InstanceContainers/ScopeContainer/ScopeContainer.cpp \
     $$PWD/src/InstanceContainers/SharedContainer/SharedContainer.cpp \
