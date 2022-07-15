@@ -1,8 +1,8 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    CallWithDependenciesExample \
     CreateExample \
     DependencyInjectionExample \
     DependencyStoreExample \
+    InstanceCallerExample \
     SubdependencyExample
