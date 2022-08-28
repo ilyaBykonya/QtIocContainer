@@ -9,11 +9,11 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
     QPointer<QtIoc::IocContainer> container = QtIoc::IocContainer::instance();
-    container->store_dependency("timer", std::make_shared<QtIoc::SingletonContainer>(new QTimer));
-    container->store_dependency("service", std::make_shared<QtIoc::ScopeContainer>([]{ return new TestService; }));
+    container->store_dependency<QTimer>(QSharedPointer<QtIoc::SingletonContainer>::create(new QTimer));
+    container->store_dependency<TestService>(QSharedPointer<QtIoc::ScopeContainer>::create([]{ return new TestService; }));
 
-    QtIoc::DependencyLoader<TestService>{ container, "service" }.load()->start();
-    QtIoc::DependencyLoader<QTimer>{ container, "timer" }->start(500);
+    QtIoc::DependencyLoader<TestService>{ container }.load()->start();
+    QtIoc::DependencyLoader<QTimer>{ container }->start(500);
 
     return app.exec();
 }

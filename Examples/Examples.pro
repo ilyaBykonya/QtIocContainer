@@ -4,5 +4,5 @@ SUBDIRS += \
     CreateExample \
     DependencyInjectionExample \
     DependencyStoreExample \
-    InstanceCallerExample \
-    SubdependencyExample
+    InstanceCallerExample
+

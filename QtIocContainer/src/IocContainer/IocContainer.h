@@ -1,8 +1,10 @@
 #pragma once
+#include "../Exceptions/ElementNotStoredException/ElementNotStoredException.h"
 #include "../InstanceContainers/AbstractContainer/AbstractContainer.h"
+#include <QSharedPointer>
 #include <unordered_map>
 #include <type_traits>
-#include <string>
+#include <typeindex>
 
 namespace QtIoc {
 /*!
@@ -11,37 +13,65 @@ namespace QtIoc {
  */
 class IocContainer : public QObject {
 private:
-    using InstancePointer = QPointer<QObject>;
-    using InstanceFactory = std::function<InstancePointer()>;
-    using ContainerPointer = std::shared_ptr<AbstractContainer>;
+    using ContainerPointer = QSharedPointer<AbstractContainer>;
+    using ContainerStorage = std::unordered_map<std::type_index, ContainerPointer>;
+    using ContainerStorageIterator = ContainerStorage::iterator;
 
-    std::unordered_map<QString, ContainerPointer> m_instances;
+    std::unordered_map<std::type_index, ContainerPointer> m_instances;
 private:
-    std::unordered_map<QString, ContainerPointer>::iterator takeIterator(const QString& name);
-    InstancePointer loadInstance(std::unordered_map<QString, ContainerPointer>::iterator iter);
+    template<typename Type>
+    ContainerStorageIterator takeIterator() {
+        auto found_iter = m_instances.find({ typeid(Type) });
+        if (found_iter == m_instances.end())
+            throw ElementNotStoredException<Type>{};
+
+        return found_iter;
+    }
+    template<typename Type>
+    QPointer<Type> loadInstance(ContainerStorageIterator iter) {
+        auto instance = iter->second->load();
+        return qobject_cast<Type*>(instance);
+    }
 public:
-    explicit IocContainer(QObject* parent = nullptr);
-    static QPointer<IocContainer> instance();
+    explicit IocContainer(QObject* parent = nullptr)
+        :QObject{ parent }
+        {
+        }
+    static QPointer<IocContainer> instance() {
+        static QPointer<IocContainer> instance{ new IocContainer };
+        return instance;
+    }
 
     /*!
      * \brief store_dependency
      * \param dependency-name и dependency-container
      * \details Store instance-container into storage
      */
-    void store_dependency(const QString& name, ContainerPointer container);
+    template<typename Type>
+    void store_dependency(ContainerPointer container) {
+        m_instances[{ typeid(Type) }] = container;
+    }
     /*!
      * \brief load_dependency
      * \return object-instance
      * \param dependency-name
      * \details Load instace from storage
      */
-    QPointer<QObject> load_dependency(const QString& name);
+    template<typename Type>
+    QPointer<Type> load_dependency() {
+        return loadInstance<Type>(takeIterator<Type>());
+    }
     /*!
      * \brief remove_dependency
      * \return void
      * \param dependency-name
      * \details Remove instace from storage
      */
-    void remove_dependency(const QString& name);
+    template<typename Type>
+    void remove_dependency() {
+        m_instances.erase({ typeid(Type) });
+    }
 };
+
+
 }

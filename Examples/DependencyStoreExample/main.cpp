@@ -7,10 +7,10 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
-    QPointer<QtIoc::IocContainer> container = QtIoc::IocContainer::instance();
-    container->store_dependency("timer", std::make_shared<QtIoc::SingletonContainer>(new QTimer));
+    auto container = QtIoc::IocContainer::instance();
+    container->store_dependency<QTimer>(QSharedPointer<QtIoc::SingletonContainer>::create(new QTimer));
 
-    QtIoc::DependencyLoader<QTimer> loader{ container, "timer" };
+    QtIoc::DependencyLoader<QTimer> loader{ container };
     QObject::connect(loader.load(), &QTimer::timeout, []{ qDebug() << "Timeout"; });
     loader->start(500);
 

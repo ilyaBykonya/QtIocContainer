@@ -16,13 +16,8 @@ public:
     InstanceCaller(QPointer<IocContainer> container);
 
     template<typename ResultType, typename...Args>
-    ResultType call(std::function<ResultType(Args...)> callable, const std::array<QString, sizeof...(Args)>& dependenciesNames) {
-        return callPrivate<ResultType, Args...>(callable, dependenciesNames, 0);
-    }
-private:
-    template<typename ResultType, typename...Args>
-    ResultType callPrivate(std::function<ResultType(Args...)> callable, const std::array<QString, sizeof...(Args)>& dependenciesNames, int currentIndex) {
-        return callable(DependencyLoader<Args>{ m_container, dependenciesNames[currentIndex++] }.load()...);
+    ResultType call(std::function<ResultType(Args...)> callable) {
+        return callable(DependencyLoader<Args>{ m_container }.load()...);
     }
 };
 }

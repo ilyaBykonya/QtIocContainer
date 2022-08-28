@@ -15,13 +15,8 @@ public:
     InstanceCreator(QPointer<IocContainer> container);
 
     template<typename ResultType, typename...Args>
-    QPointer<ResultType> create(const std::array<QString, sizeof...(Args)>& dependenciesNames) {
-        return createPrivate<ResultType, Args...>(dependenciesNames, 0);
-    }
-private:
-    template<typename ResultType, typename...Args>
-    QPointer<ResultType> createPrivate(const std::array<QString, sizeof...(Args)>& dependenciesNames, int currentIndex) {
-        return QPointer<ResultType>{ new ResultType(DependencyLoader<Args>{ m_container, dependenciesNames[currentIndex++] }.load()...) };
+    QPointer<ResultType> create() {
+        return QPointer<ResultType>{ new ResultType{ DependencyLoader<Args>{ m_container }.load()... } };
     }
 };
 }
