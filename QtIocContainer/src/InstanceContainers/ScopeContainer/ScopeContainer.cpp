@@ -1,7 +1,7 @@
 #include "ScopeContainer.h"
 
 namespace QtIoc {
-ScopeContainer::ScopeContainer(InstacneFactory factory)
+ScopeContainer::ScopeContainer(InstanceFactory factory)
     :m_factory{ std::move(factory) }
     {
     }

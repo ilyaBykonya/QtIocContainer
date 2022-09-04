@@ -1,7 +1,7 @@
 #include "SharedContainer.h"
 
 namespace QtIoc {
-SharedContainer::SharedContainer(InstacneFactory factory)
+SharedContainer::SharedContainer(InstanceFactory factory)
     :m_factory{ std::move(factory) }
     {
     }

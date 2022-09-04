@@ -15,10 +15,10 @@ namespace QtIoc {
 class ScopeContainer : public AbstractContainer {
 private:
     using InstancePointer = typename AbstractContainer::QObjectPointer;
-    using InstacneFactory = std::function<InstancePointer()>;
-    InstacneFactory m_factory;
+    using InstanceFactory = std::function<InstancePointer()>;
+    InstanceFactory m_factory;
 public:
-    ScopeContainer(InstacneFactory factory);
+    ScopeContainer(InstanceFactory factory);
     virtual InstancePointer load() override;
     virtual bool contains() const override;
 };

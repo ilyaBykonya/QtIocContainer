@@ -17,11 +17,11 @@ namespace QtIoc {
 class SharedContainer : public AbstractContainer {
 private:
     using InstancePointer = typename AbstractContainer::QObjectPointer;
-    using InstacneFactory = std::function<InstancePointer()>;
-    InstacneFactory m_factory;
+    using InstanceFactory = std::function<InstancePointer()>;
+    InstanceFactory m_factory;
     InstancePointer m_instance;
 public:
-    SharedContainer(InstacneFactory factory);
+    SharedContainer(InstanceFactory factory);
     virtual ~SharedContainer() override;
 public:
     virtual InstancePointer load() override;
