@@ -9,29 +9,13 @@
 namespace QtIoc {
 /*!
  * \brief The IocContainer class
- * \details CRUD-repository for storing containers with objects.
+ * \details Repository for storing containers with objects.
  */
 class IocContainer : public QObject {
 private:
     using ContainerPointer = QSharedPointer<AbstractContainer>;
-    using ContainerStorage = std::unordered_map<std::type_index, ContainerPointer>;
-    using ContainerStorageIterator = ContainerStorage::iterator;
-
-    std::unordered_map<std::type_index, ContainerPointer> m_instances;
-private:
-    template<typename Type>
-    ContainerStorageIterator takeIterator() {
-        auto found_iter = m_instances.find({ typeid(Type) });
-        if (found_iter == m_instances.end())
-            throw ElementNotStoredException<Type>{};
-
-        return found_iter;
-    }
-    template<typename Type>
-    QPointer<Type> loadInstance(ContainerStorageIterator iter) {
-        auto instance = iter->second->load();
-        return qobject_cast<Type*>(instance);
-    }
+    using ContainerStorage = std::unordered_map<std::type_index, std::map<QString, ContainerPointer>>;
+    ContainerStorage m_instances;
 public:
     explicit IocContainer(QObject* parent = nullptr)
         :QObject{ parent }
@@ -48,8 +32,8 @@ public:
      * \details Store instance-container into storage
      */
     template<typename Type>
-    void store_dependency(ContainerPointer container) {
-        m_instances[{ typeid(Type) }] = container;
+    void store_dependency(const QString& name = {}, ContainerPointer container = {}) {
+        m_instances[{ typeid(Type) }][name] = container;
     }
     /*!
      * \brief load_dependency
@@ -58,8 +42,21 @@ public:
      * \details Load instace from storage
      */
     template<typename Type>
-    QPointer<Type> load_dependency() {
-        return loadInstance<Type>(takeIterator<Type>());
+    QPointer<Type> load_dependency(const QString& name = {}) {
+        auto type_iter = m_instances.find(std::type_index{ typeid(Type) });
+        if(type_iter == m_instances.end())
+            throw ElementNotStoredException<Type>{};
+        auto name_iter = type_iter->second.find(name);
+        if(name_iter == type_iter->second.end())
+            throw ElementNotStoredException<Type>{};
+        if(name_iter->second.isNull()) {
+            type_iter->second.erase(name_iter);
+            if(type_iter->second.empty()) {
+                m_instances.erase(type_iter);
+            }
+            throw ElementNotStoredException<Type>{};
+        }
+        return qobject_cast<Type*>(name_iter->second->load());
     }
     /*!
      * \brief remove_dependency
@@ -68,8 +65,11 @@ public:
      * \details Remove instace from storage
      */
     template<typename Type>
-    void remove_dependency() {
-        m_instances.erase({ typeid(Type) });
+    void remove_dependency(const QString& name = {}) {
+        const auto type = std::type_index{ typeid(Type) };
+        m_instances[type].erase(name);
+        if(m_instances[type].empty())
+            m_instances.erase(type);
     }
 };
 
